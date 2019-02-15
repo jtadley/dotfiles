@@ -1,3 +1,10 @@
+set nocompatible
+filetype plugin indent on
+execute pathogen#infect()
+
+let mapleader=" "
+
+" ---------------------------------------------------------------------
 " Line numbering
 set relativenumber
 set number
@@ -28,8 +35,23 @@ set matchpairs+=<:>
 " ---------------------------------------------------------------------
 " Coloring
 syntax on
-colorscheme murphy
-"colorscheme torte
+colorscheme lucius
+" murphy *torte archery jellybeans lightning *lucius materialbox gruvbox
+" scheakur
+nnoremap <Leader>c1 :colorscheme torte<cr>
+nnoremap <Leader>c2 :colorscheme lucius<cr>
+nnoremap <Leader>c3 :colorscheme archery<cr>
+nnoremap <Leader>c4 :colorscheme seoul256<cr>
+nnoremap <Leader>c5 :colorscheme jellybeans<cr>
+nnoremap <Leader>c6 :colorscheme lightning<cr>
+nnoremap <Leader>c7 :colorscheme scheakur<cr>
+nnoremap <Leader>c8 :colorscheme materialbox<cr>
+nnoremap <Leader>c9 :colorscheme murphy<cr>
+nnoremap <Leader>c0 :colorscheme gruvbox<cr>
+
+syntax enable
+
+" ---------------------------------------------------------------------
 
 " ---------------------------------------------------------------------
 " Searching
@@ -60,12 +82,18 @@ nnoremap k gk
 " jk is esc
 inoremap jk <esc>
 
-let mapleader=","
 
 " See undo tree
 nnoremap <leader>u :GundoToggle<CR>
 " Save entire session
 nnoremap <leader>s :mksession<CR>
+
+" ---------------------------------------------------------------------
+" Clear search highlighting
+nnoremap <Leader><space> :noh<cr>
+
+" ---------------------------------------------------------------------
+nnoremap <Leader>ct :! pdflatex ./*.tex<CR>
 
 " ---------------------------------------------------------------------
 " Transparent background
