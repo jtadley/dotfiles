@@ -2,7 +2,7 @@ set nocompatible
 filetype plugin indent on
 execute pathogen#infect()
 
-let mapleader=" "
+let mapleader=","
 
 " ---------------------------------------------------------------------
 " Line numbering
@@ -90,7 +90,7 @@ nnoremap <leader>s :mksession<CR>
 
 " ---------------------------------------------------------------------
 " Clear search highlighting
-nnoremap <Leader><space> :noh<cr>
+nnoremap <Leader>, :noh<cr>
 
 " ---------------------------------------------------------------------
 nnoremap <Leader>ct :! pdflatex ./*.tex<CR>
