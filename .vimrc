@@ -94,6 +94,7 @@ nnoremap <Leader>, :noh<cr>
 
 " ---------------------------------------------------------------------
 nnoremap <Leader>ct :! pdflatex ./*.tex<CR>
+nnoremap <Leader>cd :! make download<CR>
 
 " ---------------------------------------------------------------------
 " Transparent background
