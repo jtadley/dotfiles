@@ -47,13 +47,13 @@ bindsym $mod+Shift+q kill
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # Alternative: rofi
-bindsym $mod+d exec rofi -show run -lines 7 -eh 2 -width 100 -padding 400 -opacity "100" -bw 0 -bg "$bg-color" -fg "$inactive-text-color" -hlbg "$bg-color" -hlfg "$text-color" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -lines 7 -eh 2 -width 100 -padding 400 -opacity "75" -bw 0 -bg "$bg-color" -fg "$inactive-text-color" -hlbg "$bg-color" -hlfg "$text-color" -font "System San Francisco Display 18"
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -177,7 +177,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        # status_command i3status
+				status_command i3blocks -c ~/.config/i3/i3blocks.conf
         tray_output primary
 
 				colors {
@@ -191,7 +192,8 @@ bar {
 }
 
 # lock screen
-bindsym $mod+shift+x exec i3lock
+bindsym $mod+shift+x exec ~/.config/i3/Lock/lock.sh
+bindsym $mod+shift+z exec ~/.config/i3/Lock/regular-lock.sh
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -233,3 +235,18 @@ client.urgent							$urgent-bg-color		$urgent-bg-color		$urgent-text-color		$ind
 
 # Get rid of borders
 hide_edge_borders both
+
+# Get rid of that trackpad
+exec xinput set-prop 11 143 0
+
+# Speed up that trackpoint
+exec xinput set-prop 12 268 0.325
+
+# Redshift
+exec redshift
+
+# Compton
+exec compton -f
+
+# Background
+exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/albums/cropped-ride-nowhere-lrg.png
