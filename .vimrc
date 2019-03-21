@@ -52,6 +52,11 @@ nnoremap <Leader>c0 :colorscheme gruvbox<cr>
 syntax enable
 
 " ---------------------------------------------------------------------
+augroup remember_folds
+	autocmd!
+	autocmd BufWinLeave * mkview
+	autocmd BufWinEnter * silent! loadview
+augroup END
 
 " ---------------------------------------------------------------------
 " Searching
