@@ -36,6 +36,8 @@ set matchpairs+=<:>
 " Coloring
 syntax on
 colorscheme lucius
+set background=light
+" set background=dark
 " murphy *torte archery jellybeans lightning *lucius materialbox gruvbox
 " scheakur
 nnoremap <Leader>c1 :colorscheme torte<cr>
@@ -102,15 +104,20 @@ nnoremap <Leader>ct :! pdflatex ./*.tex<CR>
 nnoremap <Leader>cd :! make download<CR>
 
 " ---------------------------------------------------------------------
-" Transparent background
-let t:is_transparent = 0
-function! Toggle_transparent()
-	if t:is_transparent == 0
+" Background toggle
+let t:is_bg = 0
+function! Toggle_bg()
+	if t:is_bg == 0
 		hi Normal ctermbg=None
-		let t:is_transparent = 1
+		let t:is_bg = 1
 	else
-		set background=dark
-		let t:is_transparent = 0
+		if t:is_bg == 1
+			set background=light
+			let t:is_bg = 2
+		else
+			set background=dark
+			let t:is_bg = 0
+		endif
 	endif
 endfunction
-nnoremap <C-t> : call Toggle_transparent()<CR>
+nnoremap <C-t> : call Toggle_bg()<CR>
