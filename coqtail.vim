@@ -62,10 +62,12 @@ function! coqtail#GetCurWord()
     setlocal iskeyword+=.
     setlocal iskeyword+='
 
-    " Check if current word ends in '.' and remove it if so
     let l:cword = expand('<cword>')
-    if l:cword =~ '.*[.]$'
-        let l:cword = l:cword[:-2]
+
+    " Strip trailing '.'s
+    let l:dotidx = match(l:cword, '[.]\+$')
+    if l:dotidx > -1
+        let l:cword = l:cword[: l:dotidx - 1]
     endif
 
     " Reset iskeyword
@@ -378,8 +380,8 @@ endfunction
 " Initialize Python interface, commands, autocmds, and goals and info panels.
 function! coqtail#Start(...)
     " Highlighting for checked parts
-    hi default CheckedByCoq ctermbg=254 guibg=254
-    hi default SentToCoq ctermbg=253 guibg=253
+    hi default CheckedByCoq ctermbg=239 guibg=LimeGreen
+    hi default SentToCoq ctermbg=240 guibg=LimeGreen
     hi link CoqError Error
 
     if b:coq_running == 1
