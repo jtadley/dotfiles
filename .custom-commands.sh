@@ -8,5 +8,5 @@ mkcd () {
 
 # Opens a new terminal in current working directory
 nt () {
-	pwd | urxvt
+	pwd | urxvt &
 }
