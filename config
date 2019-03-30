@@ -60,7 +60,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec palemoon
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu pcmanfm
@@ -432,3 +432,4 @@ exec xinput set-prop 12 268 0.325
 
 # Background
 exec_always --no-startup-id /usr/bin/feh --bg-fill '/home/adleypc/Pictures/Wallpapers/albums/cropped-ride-nowhere-lrg.png'
+exec --no-startup-id nitrogen --restore
