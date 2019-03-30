@@ -36,8 +36,8 @@ set matchpairs+=<:>
 " Coloring
 syntax on
 colorscheme lucius
-set background=light
-" set background=dark
+"set background=light
+set background=dark
 " murphy *torte archery jellybeans lightning *lucius materialbox gruvbox
 " scheakur
 nnoremap <Leader>c1 :colorscheme torte<cr>
@@ -101,7 +101,9 @@ nnoremap <Leader>, :noh<cr>
 
 " ---------------------------------------------------------------------
 nnoremap <Leader>ct :! pdflatex ./*.tex<CR>
-nnoremap <Leader>cd :! make download<CR>
+nnoremap <Leader>md :! make download<CR>
+nnoremap <Leader>mt :! make test<CR>
+nnoremap <Leader>mm :! make<CR>
 
 " ---------------------------------------------------------------------
 " Background toggle
