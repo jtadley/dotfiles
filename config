@@ -431,5 +431,5 @@ exec xinput set-prop 11 143 0
 exec xinput set-prop 12 268 0.325
 
 # Background
-exec_always --no-startup-id /usr/bin/feh --bg-fill '/home/adleypc/Pictures/Wallpapers/albums/cropped-ride-nowhere-lrg.png'
-exec --no-startup-id nitrogen --restore
+#exec_always --no-startup-id /usr/bin/feh --bg-fill '/home/adleypc/Pictures/Wallpapers/albums/cropped-ride-nowhere-lrg.png'
+#exec --no-startup-id nitrogen --restore
