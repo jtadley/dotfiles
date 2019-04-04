@@ -1,6 +1,6 @@
 #
 # ~/.bashrc
-#
+# reload: source ~/.bashrc
 
 [[ $- != *i* ]] && return
 
