@@ -10,3 +10,9 @@ mkcd () {
 nt () {
 	pwd | urxvt &
 }
+
+# Loads coq and runs vim
+coqvim () {
+	eval `opam config env` &&
+		vim "$1"
+}
