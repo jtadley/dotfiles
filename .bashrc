@@ -2,6 +2,8 @@
 # ~/.bashrc
 # reload: source ~/.bashrc
 
+set -o vi
+
 [[ $- != *i* ]] && return
 
 colors() {
