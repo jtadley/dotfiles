@@ -64,12 +64,12 @@ Xcursor.size:                     0
 !URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
 
 !Source Code Pro
-!URxvt.font:	xft:Source Code Pro:regular:size=12
+URxvt.font:	xft:Source Code Pro:regular:size=12
+URxvt.letterSpace: -1
 
 ! Anonymous Pro
-URxvt.font: xft:Anonymous\ Pro\ Minus-12
+!URxvt.font: xft:Anonymous\ Pro\ Minus-12
 !URxvt.font: xft:Anonymous\ Pro-12
-!URxvt.letterSpace: -1
 ! -------------
 
 ! alternative font settings with 'terminus':
@@ -88,8 +88,8 @@ URxvt*saveLines:                  5000
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
 ! URxvt*inheritPixmap:            true
-! URxvt*transparent:              true
-! URxvt*shading:                  138
+URxvt*transparent:              true
+URxvt*shading:                  15
 
 ! Normal copy-paste keybindings without perls
 URxvt.iso14755:                   false
@@ -247,3 +247,13 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 ! -xos4-terminus-bold-r-normal--24-240-72-72-c-120-iso10646-1
 ! -xos4-terminus-bold-r-normal--28-280-72-72-c-140-iso10646-1
 ! -xos4-terminus-bold-r-normal--32-320-72-72-c-160-iso10646-1
+
+
+! Keyboard Select
+URxvt.perl-ext-common:						default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:				firefox
+URxvt.url-select.underline:				true
+URxvt.keyboard-select.clipboard: 	true
+URxvt.keysym.M-u:									perl:url-select:select_next
+URxvt.keysym.M-Escape:						perl:keyboard-select:activate
+URxvt.keysym.M-s:									perl:keyboard-select:search
