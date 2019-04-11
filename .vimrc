@@ -101,7 +101,8 @@ nnoremap <leader>s :mksession<CR>
 nnoremap <Leader>, :noh<cr>
 
 " ---------------------------------------------------------------------
-nnoremap <Leader>ct :! pdflatex ./*.tex<CR>
+nnoremap <Leader>ct :! pdflatex %:p<CR>
+nnoremap <Leader>cd :! dafny %:p<CR>
 nnoremap <Leader>md :! make download<CR>
 nnoremap <Leader>mt :! make test<CR>
 nnoremap <Leader>mm :! make<CR>
