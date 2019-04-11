@@ -37,7 +37,8 @@ set matchpairs+=<:>
 syntax on
 colorscheme lucius
 "set background=light
-set background=dark
+" set background=dark
+autocmd VimEnter * hi Normal ctermbg=None
 " murphy *torte archery jellybeans lightning *lucius materialbox gruvbox
 " scheakur
 nnoremap <Leader>c1 :colorscheme torte<cr>
@@ -87,7 +88,7 @@ nnoremap j gj
 nnoremap k gk
 
 " jk is esc
-inoremap jk <esc>
+" inoremap jk <esc>
 
 
 " See undo tree
@@ -104,6 +105,7 @@ nnoremap <Leader>ct :! pdflatex ./*.tex<CR>
 nnoremap <Leader>md :! make download<CR>
 nnoremap <Leader>mt :! make test<CR>
 nnoremap <Leader>mm :! make<CR>
+nnoremap <Leader>ol :! eval `opam config env`<CR>
 
 " ---------------------------------------------------------------------
 " Background toggle
@@ -123,3 +125,10 @@ function! Toggle_bg()
 	endif
 endfunction
 nnoremap <C-t> : call Toggle_bg()<CR>
+
+" ---------------------------------------------------------------------
+"  DAFNY
+augroup twig_ft
+	au!
+	autocmd BufNewFile,BufRead	*.dpy	set syntax=dafny
+augroup END
