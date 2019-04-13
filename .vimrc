@@ -101,6 +101,7 @@ nnoremap <leader>s :mksession<CR>
 nnoremap <Leader>, :noh<cr>
 
 " ---------------------------------------------------------------------
+nnoremap <Leader>rt :! raco test %:p<CR>
 nnoremap <Leader>ct :! pdflatex %:p<CR>
 nnoremap <Leader>cd :! dafny %:p<CR>
 nnoremap <Leader>md :! make download<CR>
