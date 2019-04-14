@@ -424,8 +424,10 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# Disable trackpad
-exec xinput set-prop 11 143 0
+# Disable trackpad (see devices with xinput)
+exec xinput set-prop 11 "Device Enabled" 0
+bindsym $mod+backslash exec --no-startup-id xinput set-prop 11 "Device Enabled" 0
+bindsym $mod+Shift+backslash exec --no-startup-id xinput set-prop 11 "Device Enabled" 1
 
 # Speed up trackpoint
 exec xinput set-prop 12 268 0.325
