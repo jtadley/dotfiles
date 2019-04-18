@@ -8,10 +8,10 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="kennethreitz"
+# ZSH_THEME="kennethreitz"
 # ZSH_THEME="agnoster"
 # ZSH_THEME="fishy"
-# ZSH_THEME="lambda"
+ZSH_THEME="lambda"
 # ZSH_THEME="random"
 
 # Set list of themes to pick from when loading at random
@@ -100,6 +100,22 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 set -o vi
+
+export KEYTIMEOUT=1
+
+function zle-keymap-select() {
+	zle reset-prompt
+	zle -R
+}
+
+zle -N zle-keymap-select
+
+function vi_mode_prompt_info() {
+	echo "%{$fg_no_bold[cyan]%}${${KEYMAP/vicmd/[% NORMAL]%}/(main|viins)/[% INSERT]%}"
+}
+
+RPS1='$(vi_mode_prompt_info)'
+RPS2=$RPS1
 
 source ~/.custom-commands.sh
 setxkbmap gb
