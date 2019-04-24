@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "$1" | entr -p pandoc "$1" -t beamer -o out.pdf
