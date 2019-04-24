@@ -103,12 +103,15 @@ nnoremap <Leader>, :noh<cr>
 " ---------------------------------------------------------------------
 nnoremap <Leader>rt :! raco test %:p<CR>
 nnoremap <Leader>ct :! pdflatex %:p<CR>
+"nnoremap <Leader>ta :! entrlatex %:p<CR>
+"nnoremap <Leader>ta :! ~/Scripts/entrlatex %:p &<CR>
 nnoremap <Leader>cd :! dafny %:p<CR>
 nnoremap <Leader>md :! make download<CR>
 nnoremap <Leader>mt :! make test<CR>
 nnoremap <Leader>mm :! make<CR>
 nnoremap <Leader>ol :! eval `opam config env`<CR>
 nnoremap <Leader>pc :! pandoc %:p -t beamer -o out.pdf<CR>
+nnoremap <Leader>pa :! entrpandoc %:p<CR>
 
 " ---------------------------------------------------------------------
 " Background toggle
