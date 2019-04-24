@@ -108,6 +108,7 @@ nnoremap <Leader>md :! make download<CR>
 nnoremap <Leader>mt :! make test<CR>
 nnoremap <Leader>mm :! make<CR>
 nnoremap <Leader>ol :! eval `opam config env`<CR>
+nnoremap <Leader>pc :! pandoc %:p -t beamer -o out.pdf<CR>
 
 " ---------------------------------------------------------------------
 " Background toggle
