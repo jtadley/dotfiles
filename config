@@ -60,7 +60,9 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec firefox
+# bindsym $mod+F2 exec firefox
+# bindsym $mod+F2 exec palemoon
+bindsym $mod+F2 exec ~/Scripts/surfmarks
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu pcmanfm
@@ -424,7 +426,7 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# Disable trackpad (see devices with xinput)
+# Disable trackpad (see devices with xinput, sometimes touchpad is on 11, sometimes 15)
 exec xinput set-prop 11 "Device Enabled" 0
 bindsym $mod+backslash exec --no-startup-id xinput set-prop 11 "Device Enabled" 0
 bindsym $mod+Shift+backslash exec --no-startup-id xinput set-prop 11 "Device Enabled" 1

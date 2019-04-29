@@ -1,0 +1,6 @@
+#!/bin/sh
+# dmenu binary prompt script
+# $1 is message
+# $2 is what to run
+
+[ $(echo -e "No\nYes" | dmenu -i -p "$1") == "Yes" ] && $2

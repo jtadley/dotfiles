@@ -1,0 +1,5 @@
+#!/bin/sh
+# list out bookmarks into dmenu and open chosen with surf
+
+result=$(cat ~/bookmarks.txt | dmenu)
+surf "$result"
