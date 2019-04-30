@@ -36,9 +36,9 @@ set matchpairs+=<:>
 " Coloring
 syntax on
 colorscheme lucius
-"set background=light
+set background=light
 " set background=dark
-autocmd VimEnter * hi Normal ctermbg=None
+" autocmd VimEnter * hi Normal ctermbg=None
 " murphy *torte archery jellybeans lightning *lucius materialbox gruvbox
 " scheakur
 nnoremap <Leader>c1 :colorscheme torte<cr>
@@ -111,11 +111,13 @@ nnoremap <Leader>mt :! make test<CR>
 nnoremap <Leader>mm :! make<CR>
 nnoremap <Leader>ol :! eval `opam config env`<CR>
 nnoremap <Leader>pc :! pandoc %:p -t beamer -o out.pdf<CR>
-nnoremap <Leader>pa :! entrpandoc %:p<CR>
+"nnoremap <Leader>pa :! ~/Scripts/entrpandoc %:p &<CR>
+
+"autocmd VimLeave *.tex !texclear %
 
 " ---------------------------------------------------------------------
 " Background toggle
-let t:is_bg = 0
+let t:is_bg = 2
 function! Toggle_bg()
 	if t:is_bg == 0
 		hi Normal ctermbg=None
