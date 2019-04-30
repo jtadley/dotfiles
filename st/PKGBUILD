@@ -23,6 +23,7 @@ build() {
   cd $srcdir/$pkgname-$pkgver
   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 	sudo cp $srcdir/$pkgname-$pkgver/st /usr/bin/st
+	sudo cp $srcdir/$pkgname-$pkgver/st /usr/local/bin/st
 }
 
 package() {
