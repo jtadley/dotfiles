@@ -1,0 +1,11 @@
+~~Coqtail~~
+<Leader>cc -> compile
+<Leader>cl -> to cursor
+<Leader>cj -> next
+<Leader>ck -> prev
+<Leader>ca -> print info
+<Leader>cp -> print def'n
+
+~~Commenting~~
+<Leader>cb -> comment
+<Leader>cu -> uncomment

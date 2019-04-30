@@ -1,5 +1,9 @@
 #!/bin/bash
 
+myst () {
+	/usr/bin/st
+}
+
 # Creates a new directory and changed current directory to inside
 mkcd () {
 	mkdir -p -- "$1" &&
@@ -8,7 +12,7 @@ mkcd () {
 
 # Opens a new terminal in current working directory
 nt () {
-	pwd | urxvt &
+	pwd | st &
 }
 
 # Loads coq and runs vim
@@ -23,6 +27,42 @@ entrlatex () {
 
 entrpandoc () {
 	echo "$1" | entr -p pandoc "$1" -t beamer -o out.pdf
+}
+
+hdmion () {
+	xrandr --output HDMI2 --auto
+}
+
+xrandron () {
+	xrandr --output "$1" --auto
+}
+
+hdmil () {
+	xrandr --output HDMI2 --auto --left-of eDP1
+}
+
+hdmir () {
+	xrandr --output HDMI2 --auto --left-of eDP1
+}
+
+xrandrl () {
+	xrandr --output "$1" --auto --left-of eDP1
+}
+
+xrandrr () {
+	xrandr --output "$1" --auto --left-of eDP1
+}
+
+hdmioff () {
+	xrandr --output HDMI2 --off
+}
+
+xrandroff () {
+	xrandr --output "$1" --off
+}
+
+surfmarks () {
+	~/Scripts/surfmarks
 }
 
 rawr () {

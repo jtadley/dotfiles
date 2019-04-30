@@ -1,0 +1,4 @@
+'xrandr' to display output devices
+'xrandr --output DEVICE_NAME --auto' to turn on (duplicate?)
+'xrandr --output DEVICE_NAME --off' to turn off display
+'xrandr --output DEVICE_NAME --left-of DEVICE_NAME'

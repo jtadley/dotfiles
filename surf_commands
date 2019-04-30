@@ -1,0 +1,17 @@
+man surf
+Gtrl-G : Address bar
+Ctrl-H : Go back
+Ctrl-L : Go forward
+Ctrl+R : Reload
+Ctrl+Shift+K : Zoom in
+Ctrl+Shift+J : Zoom out
+
+- Tabbed Surf
+tabbed surf -pe
+Shift+Ctrl+Enter : New tab
+Shitf+Ctrl+L : Next higher number tab
+Shitf+Ctrl+H : Next lower number tab
+Ctrl+Tab : Toggle between last 2 tabs
+Ctrl+Number : Switch to tab Number
+Ctrl+Q : Close current tab
+Ctrl+T : Tab picklist
