@@ -257,3 +257,8 @@ URxvt.keyboard-select.clipboard: 	true
 URxvt.keysym.M-u:									perl:url-select:select_next
 URxvt.keysym.M-Escape:						perl:keyboard-select:activate
 URxvt.keysym.M-s:									perl:keyboard-select:search
+
+! st
+st.alpha: 220
+st.font: Source Code Pro:pixelsize=16:antialias=true:autohint=true;
+st.color0: #111
