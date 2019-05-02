@@ -440,4 +440,4 @@ exec xinput set-prop 12 268 0.325
 
 # Fix key mappings
 exec --no-startup-id xmodmap ~/.Xmodmap
-bindsym $mod+Shift+x xmodmap ~/.Xmodmap
+bindsym $mod+Shift+x exec xmodmap ~/.Xmodmap
