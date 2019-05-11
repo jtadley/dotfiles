@@ -112,6 +112,7 @@ nnoremap <Leader>mm :! make<CR>
 nnoremap <Leader>ol :! eval `opam config env`<CR>
 nnoremap <Leader>pc :! pandoc %:p -t beamer -o out.pdf<CR>
 "nnoremap <Leader>pa :! ~/Scripts/entrpandoc %:p &<CR>
+nnoremap <Leader>hs :! ghc -o out %:p && ./out<CR>
 
 "autocmd VimLeave *.tex !texclear %
 
