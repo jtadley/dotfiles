@@ -2,6 +2,7 @@ https://www.google.com
 https://maps.google.com
 https://wiki.archlinux.org
 https://www.wikipedia.org/
+https://www.wunderground.com/hourly/us/in/bloomington?cm_ven=localwx_hour
 https://mail.google.com/mail/u/0
 https://mail.google.com/mail/u/1
 https://hangouts.google.com/
