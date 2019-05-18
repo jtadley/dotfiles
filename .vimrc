@@ -117,6 +117,10 @@ nnoremap <Leader>hs :! ghc -o out %:p && ./out<CR>
 "autocmd VimLeave *.tex !texclear %
 
 " ---------------------------------------------------------------------
+"  Git pushing
+command! -nargs=1 Gitall exec "! git add . && git commit -m '".<q-args>."' && git push"
+
+" ---------------------------------------------------------------------
 " Background toggle
 let t:is_bg = 2
 function! Toggle_bg()
