@@ -119,6 +119,7 @@ nnoremap <Leader>hs :! ghc -o out %:p && ./out<CR>
 " ---------------------------------------------------------------------
 "  Git pushing
 command! -nargs=1 Gitall exec "! git add . && git commit -m '".<q-args>."' && git push"
+command! -nargs=1 Gitcur exec "! git add %:p && git commit -m '".<q-args>."' && git push"
 
 " ---------------------------------------------------------------------
 " Background toggle
