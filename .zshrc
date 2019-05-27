@@ -79,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -111,7 +111,7 @@ function zle-keymap-select() {
 zle -N zle-keymap-select
 
 function vi_mode_prompt_info() {
-	echo "%{$fg_no_bold[cyan]%}${${KEYMAP/vicmd/[% NORMAL]%}/(main|viins)/[% INSERT]%}"
+	echo "${${KEYMAP/vicmd/[% NORMAL]%}/(main|viins)/[% INSERT]%}"
 }
 
 RPS1='$(vi_mode_prompt_info)'
@@ -119,3 +119,5 @@ RPS2=$RPS1
 
 source ~/.custom-commands.sh
 setxkbmap gb
+# export BROWSER=/usr/bin/firefox
+export BROWSER=/usr/bin/surf
