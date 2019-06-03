@@ -13,6 +13,7 @@ set number
 " Tabs
 set tabstop=2
 set softtabstop=0 noexpandtab
+" set expandtab
 set shiftwidth=2
 set smarttab
 
@@ -31,6 +32,11 @@ set laststatus=2
 " ---------------------------------------------------------------------
 " Highlight brackets, % to switch between
 set matchpairs+=<:>
+"
+" ---------------------------------------------------------------------
+if has("autocmd")
+	au BufReadPost *.rkt,*.rktl set filetype=scheme
+endif
 
 " ---------------------------------------------------------------------
 " Coloring
@@ -101,25 +107,45 @@ nnoremap <leader>s :mksession<CR>
 nnoremap <Leader>, :noh<cr>
 
 " ---------------------------------------------------------------------
-nnoremap <Leader>rt :! raco test %:p<CR>
-nnoremap <Leader>ct :! pdflatex %:p<CR>
+"nnoremap <Leader>rt :! raco test %:p<CR>
+"nnoremap <Leader>ct :! pdflatex %:p<CR>
 "nnoremap <Leader>ta :! entrlatex %:p<CR>
 "nnoremap <Leader>ta :! ~/Scripts/entrlatex %:p &<CR>
-nnoremap <Leader>cd :! dafny %:p<CR>
+"nnoremap <Leader>cd :! dafny %:p<CR>
 nnoremap <Leader>md :! make download<CR>
 nnoremap <Leader>mt :! make test<CR>
 nnoremap <Leader>mm :! make<CR>
 nnoremap <Leader>ol :! eval `opam config env`<CR>
-nnoremap <Leader>pc :! pandoc %:p -t beamer -o out.pdf<CR>
+"nnoremap <Leader>pc :! pandoc %:p -t beamer -o out.pdf<CR>
 "nnoremap <Leader>pa :! ~/Scripts/entrpandoc %:p &<CR>
 nnoremap <Leader>hs :! ghc -o out %:p && ./out<CR>
+nnoremap <Leader>jc :! javac %:p && java %:t:r<CR>
+
+autocmd FileType scheme nnoremap <F5> :! raco test %:p<CR>
+autocmd FileType tex nnoremap <F5> :! pdflatex %:p && rm *.aux && rm *.log<CR>
+autocmd FileType dafny nnoremap <F5> :! dafny %:p<CR>
+autocmd FileType markdown nnoremap <F5> :! pandoc %:p -t beamer -o %:t:r.pdf<CR>
+autocmd FileType haskell nnoremap <F5> :! ghc -o %:t:r %:p && ./%:t:r && rm *.hi && rm *.o<CR>
+autocmd FileType java nnoremap <F5> :! javac %:p && java %:t:r<CR>
 
 "autocmd VimLeave *.tex !texclear %
+
+" ---------------------------------------------------------------------
+"  Tab/Space Swapping
+command! -nargs=0 TabSpace2 exec "%s/	/  /g"
+command! -nargs=0 TabSpace4 exec "%s/	/    /g"
+
+command! -nargs=0 SpaceTab2 exec "%s/  /	/g"
+command! -nargs=0 SpaceTab4 exec "%s/    /	/g"
 
 " ---------------------------------------------------------------------
 "  Git pushing
 command! -nargs=1 Gitall exec "! git add . && git commit -m '".<q-args>."' && git push"
 command! -nargs=1 Gitcur exec "! git add %:p && git commit -m '".<q-args>."' && git push"
+
+" ---------------------------------------------------------------------
+"nnoremap <Tab> :bnext<cr>
+"nnoremap <S-Tab> :bprevious<cr>
 
 " ---------------------------------------------------------------------
 " Background toggle
