@@ -120,3 +120,5 @@ RPS2=$RPS1
 source ~/.custom-commands.sh
 #export BROWSER=/usr/bin/firefox
 #export BROWSER=/usr/bin/surf
+
+alias mkdir="/usr/bin/mkdir -pv"
