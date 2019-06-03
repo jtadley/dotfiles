@@ -122,7 +122,7 @@ nnoremap <Leader>hs :! ghc -o out %:p && ./out<CR>
 nnoremap <Leader>jc :! javac %:p && java %:t:r<CR>
 
 autocmd FileType scheme nnoremap <F5> :! raco test %:p<CR>
-autocmd FileType tex nnoremap <F5> :! pdflatex %:p && rm *.aux && rm *.log<CR>
+autocmd FileType tex nnoremap <F5> :! pdflatex %:p && rm %:t:r.aux && rm %:t:r.log<CR>
 autocmd FileType dafny nnoremap <F5> :! dafny %:p<CR>
 autocmd FileType markdown nnoremap <F5> :! pandoc %:p -t beamer -o %:t:r.pdf<CR>
 autocmd FileType haskell nnoremap <F5> :! ghc -o %:t:r %:p && ./%:t:r && rm *.hi && rm *.o<CR>
