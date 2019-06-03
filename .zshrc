@@ -117,7 +117,6 @@ function vi_mode_prompt_info() {
 RPS1='$(vi_mode_prompt_info)'
 RPS2=$RPS1
 
-source ~/.custom-commands.sh
-setxkbmap gb
-# export BROWSER=/usr/bin/firefox
-export BROWSER=/usr/bin/surf
+#source ~/.custom-commands.sh
+#export BROWSER=/usr/bin/firefox
+#export BROWSER=/usr/bin/surf
