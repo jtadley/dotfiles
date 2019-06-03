@@ -10,6 +10,11 @@ mkcd () {
 		cd -P -- "$1"
 }
 
+# Copies a file to a directory then goes to the directory
+cpcd () {
+	cp "$1" "$2"  && cd "$2"
+}
+
 # Opens a new terminal in current working directory
 nt () {
 	pwd | st &
