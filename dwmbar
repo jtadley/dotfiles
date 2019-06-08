@@ -1,0 +1,89 @@
+#!/bin/sh
+
+# This script sets the statusbar with the xsetroot command at the end. Have it
+# started by ~/.xinitrc or ~/.xprofile.
+
+# Set the deliminter character.
+delim="|"
+
+# testweather checks to see if the most recent forecast is up to date.  If it
+# isn't, it downloads a new weather forecast, then signals to update the
+# statusbar. Gets weather report from wttr.in.
+testweather() { \
+	[ "$(stat -c %y "$HOME/.local/share/weatherreport" 2>/dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] &&
+		ping -q -c 1 1.1.1.1 >/dev/null &&
+		curl -s "wttr.in/$location" > "$HOME/.local/share/weatherreport" &&
+		notify-send "🌞 Weather" "New weather forecast for today." &&
+		refbar
+		}
+
+status() { \
+	# PROCESSES
+	echo "☯"
+	/usr/lib/i3blocks/top-mem
+	echo "$delim"
+	echo "☮"
+	/usr/lib/i3blocks/top-cpu
+	echo "$delim"
+
+	# COMPUTER TEMPERATURE
+	echo "☢"
+	/usr/lib/i3blocks/temp
+	echo "$delim"
+
+
+	# MUSIC
+	#mpc -f "[[%artist% - ]%title%]|[%file%]" 2>/dev/null | grep -v "volume:" | head -n 1 && echo "$delim"
+
+	# WEATHER
+	[ "$(stat -c %y "$HOME/.local/share/weatherreport" 2>/dev/null | cut -d' ' -f1)" = "$(date '+%Y-%m-%d')" ] &&
+		sed '16q;d' "$HOME/.local/share/weatherreport" | grep -wo "[0-9]*%" | sort -n | sed -e '$!d' | sed -e "s/^/🌢 /g" | tr -d '\n' &&
+		sed '13q;d' "$HOME/.local/share/weatherreport" | grep -o "m\\(-\\)*[0-9]\\+" | sort -n -t 'm' -k 2n | sed -e 1b -e '$!d' | tr '\n|m' ' ' | awk '{print " ❄",$1 "°","🌣",$2 "°"}' &&
+		echo "$delim"
+
+	# VOLUME
+	amixer get Master | grep -o "[0-9]*%\|\[on\]\|\[off\]" | sed "s/\[on\]/🎵/;s/\[off\]//"
+
+	echo "$delim"
+
+	# WIFI / ETHERNET
+	grep "^\s*w" /proc/net/wireless | awk '{ print "ᛉ", int($3 * 100 / 70) "%" }'
+	sed "s/down//;s/up/⏧/" /sys/class/net/e*/operstate
+	/usr/lib/i3blocks/bandwidth
+
+	echo " $delim"
+
+	/usr/lib/i3blocks/iface
+
+	echo "$delim"
+
+	# EMAIL: MUTT
+	#command -v mw >/dev/null 2>&1 &&
+	#  echo "$delim" &&
+	#  du -a ~/.local/share/mail/*/INBOX/new/* 2>/dev/null | wc -l | sed 's/^/:/'
+	#  echo "$delim"
+
+	# BATTERY
+	for x in /sys/class/power_supply/BAT?/capacity;
+	do
+	case "$(cat $x)" in
+		100|9[0-9])	echo "" ;;
+		8[0-9]|7[0-9])	echo "" ;;
+		6[0-9]|5[0-9])	echo "" ;;
+		4[0-9]|3[0-9])	echo "" ;;
+		*)		echo "" ;;
+	esac
+	echo "$(cat $x)%"
+	done && echo "$delim"
+
+	# Date and time.
+	date '+%Y %b %d (%a) %I:%M%p'
+	}
+
+while :; do
+	xsetroot -name "$(status | tr '\n' ' ')"
+
+	testweather &
+
+	sleep 1m
+done
