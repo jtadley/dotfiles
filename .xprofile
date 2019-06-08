@@ -1,0 +1,4 @@
+dwmbar &
+exec xinput set-prop 11 "Device Enabled" 0 &
+xinput set-prop 12 268 0.325 &
+xmodmap ~/.Xmodmap
