@@ -1,4 +1,5 @@
 #!/bin/sh
+# /usr/local/bin
 
 # This script sets the statusbar with the xsetroot command at the end. Have it
 # started by ~/.xinitrc or ~/.xprofile.

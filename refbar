@@ -1,4 +1,5 @@
 #!/bin/sh
+# /usr/local/bin
 
 # Refresh the dwmbar.
 # Right now, now this is done is by killing the sleep in the bar script.

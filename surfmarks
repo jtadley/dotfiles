@@ -1,5 +1,7 @@
 #!/bin/sh
+# /usr/local/bin
 # list out bookmarks into dmenu and open chosen with surf
 
 result=$(cat ~/bookmarks.txt | dmenu)
 surf "$result"
+# tabbed -c surf -e

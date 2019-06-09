@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 myst () {
 	/usr/bin/st
@@ -66,8 +66,8 @@ xrandroff () {
 	xrandr --output "$1" --off
 }
 
-surfmarks () {
-	~/Scripts/surfmarks
+vpn () {
+	~/Scripts/vpn
 }
 
 rawr () {

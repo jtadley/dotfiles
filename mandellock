@@ -1,0 +1,17 @@
+#!/bin/sh
+# /usr/bin/mandellock
+
+import -window root /tmp/screenshot.png
+
+convert -resize 10% /tmp/screenshot.png /tmp/screenshotblur.png
+convert -resize 1000% /tmp/screenshotblur.png /tmp/screenshotblur2.png
+composite -blend 50x50 /usr/share/backgrounds/mandelbrot.png /tmp/screenshotblur2.png /tmp/lock.png
+rm /tmp/screenshot.png
+rm /tmp/screenshotblur.png
+rm /tmp/screenshotblur2.png
+
+i3lock -i /tmp/lock.png
+
+sleep 1
+
+exit 0
