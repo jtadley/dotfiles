@@ -1,8 +1,0 @@
-PDF Viewer - zathura
-Image Viewer - sxiv
-Web Browser - surf
-Terminal - st
-Text Editor - vim
-Slides - Pandoc on a Markdown file
-PDF - Latex
-Excel - sc-im
