@@ -1,0 +1,15 @@
+Pathogen
+coqtail
+- <Leader>cc: open coqide
+- <Leader>cj: coq next
+- <Leader>ck: coq prev
+- <Leader>cl: coq goto
+nerdcommenter
+- <Leader>cb: comment
+- <Leader>cu: uncomment
+vimbufsync
+vim-loves-dafny
+# mulitple-cursors: https://github.com/terryma/vim-multiple-cursors.git
+# surround: https://github.com/tpope/vim-surround.git
+paredit: git@github.com:kovisoft/paredit.git
+vim-racket: git@github.com:wlangstroth/vim-racket.git
