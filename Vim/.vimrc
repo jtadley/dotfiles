@@ -1,5 +1,6 @@
 set nocompatible
 filetype plugin indent on
+filetype plugin on
 execute pathogen#infect()
 
 let mapleader=","
@@ -10,10 +11,15 @@ set relativenumber
 set number
 
 " ---------------------------------------------------------------------
+" Automatic Command LIne History
+nnoremap : q:i
+nnoremap / q/i
+
+
+" ---------------------------------------------------------------------
 " Tabs
 set tabstop=2
 set softtabstop=0 noexpandtab
-" set expandtab
 set shiftwidth=2
 set smarttab
 
@@ -172,3 +178,21 @@ augroup twig_ft
 	au!
 	autocmd BufNewFile,BufRead	*.dpy	set syntax=dafny
 augroup END
+
+" ---------------------------------------------------------------------
+"  RACKET
+autocmd FileType scheme set expandtab
+
+
+" ---------------------------------------------------------------------
+"  RAINBOW PARENTHESES
+nnoremap <C-y> : RainbowParenthesesToggle<CR>
+
+" ---------------------------------------------------------------------
+"  Blank line inserting
+nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+
+" ---------------------------------------------------------------------
+"  Highlighted Yank
+let g:highlightedyank_highlight_duration = 500
