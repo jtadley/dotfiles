@@ -15,6 +15,10 @@ set number
 nnoremap : q:i
 nnoremap / q/i
 
+" ---------------------------------------------------------------------
+" Because hat and dollar are so difficult
+nnoremap H ^
+nnoremap L $
 
 " ---------------------------------------------------------------------
 " Tabs
