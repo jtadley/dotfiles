@@ -202,10 +202,3 @@ nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 " ---------------------------------------------------------------------
 "  Highlighted Yank
 let g:highlightedyank_highlight_duration = 500
-
-
-" ---------------------------------------------------------------------
-"  Text Register Machine
-highlight trmOperators ctermfg=168
-highlight trmComment ctermfg=183
-highlight numbers ctermfg=109
