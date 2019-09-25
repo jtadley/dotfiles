@@ -51,8 +51,8 @@ endif
 " ---------------------------------------------------------------------
 " Coloring
 syntax on
-colorscheme lucius
-set background=light
+colorscheme gruvbox
+set background=dark
 " set background=dark
 " autocmd VimEnter * hi Normal ctermbg=None
 " murphy *torte archery jellybeans lightning *lucius materialbox gruvbox
@@ -166,9 +166,11 @@ function! Toggle_bg()
 		let t:is_bg = 1
 	else
 		if t:is_bg == 1
+			colorscheme lucius
 			set background=light
 			let t:is_bg = 2
 		else
+			colorscheme gruvbox
 			set background=dark
 			let t:is_bg = 0
 		endif
@@ -200,3 +202,10 @@ nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 " ---------------------------------------------------------------------
 "  Highlighted Yank
 let g:highlightedyank_highlight_duration = 500
+
+
+" ---------------------------------------------------------------------
+"  Text Register Machine
+highlight trmOperators ctermfg=168
+highlight trmComment ctermfg=183
+highlight numbers ctermfg=109
