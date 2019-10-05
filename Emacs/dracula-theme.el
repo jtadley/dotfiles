@@ -30,7 +30,7 @@
                 (bg6          "#121212");
                 (key2         "#afafff");
                 (key3         "#afafff");
-                (builtin      "#00ffff");?
+                (builtin      "#afafff" "#00ffff") ; we actually want this color for builtins, but it's not being used for racket keywords, so let's just use it here for now
                 (keyword      "#afafff");
                 (const        "#5fffaf");
                 (comment      "#8787af");
