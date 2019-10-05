@@ -23,10 +23,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("72559f34f255a17b7055687c1593ae1dbbd3c5b61b56d0ca96f9468ca228b96c" "2296db63b1de14e65390d0ded8e2b5df4b9e4186f3251af56807026542a58201" "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" "1436d643b98844555d56c59c74004eb158dc85fc55d2e7205f8d9b8c860e177f" default)))
+    ("7f9dc0c7bc8e5b4a1b9904359ee449cac91fd89dde6aca7a45e4ed2e4985664c" "e491d84f66d5d540e8459e9af173789d6b70e42a57b2a537823441b6921b39bd" "72559f34f255a17b7055687c1593ae1dbbd3c5b61b56d0ca96f9468ca228b96c" "2296db63b1de14e65390d0ded8e2b5df4b9e4186f3251af56807026542a58201" "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" "1436d643b98844555d56c59c74004eb158dc85fc55d2e7205f8d9b8c860e177f" default)))
  '(package-selected-packages
    (quote
-    (suscolors-theme gruvbox-theme seoul256-theme evil-goggles evil-search-highlight-persist paredit racket-mode linum-relative))))
+    (jbeans-theme warm-night-theme suscolors-theme gruvbox-theme seoul256-theme evil-goggles evil-search-highlight-persist paredit racket-mode linum-relative))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -41,7 +41,8 @@
 ;; ------------------------------------------------------------------------------
 ;; Color scheme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'gruvbox t)
+(load-theme 'jbeans t)
+;(load-theme 'gruvbox t)
 ;(load-theme 'suscolors t)
 
 ;; ------------------------------------------------------------------------------
@@ -49,6 +50,8 @@
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
 (evil-mode 1)
+; duh
+(setq evil-want-C-u-scroll t)
 
 ;; ------------------------------------------------------------------------------
 ;; Relative line numbers
@@ -69,17 +72,17 @@
 ;; Highlight matching parenthesis
 (require 'highlight)
 (require 'evil-search-highlight-persist)
-(global-evil-search-highlight-persist t)
+;(global-evil-search-highlight-persist t)
 
 ;; ------------------------------------------------------------------------------
 ;; Highlight matching parenthesis
-; (global-hl-line-mode +1)
-; (setq hl-line-face "white")
+(global-hl-line-mode +1)
+;(setq hl-line-face "white")
 
 ;; ------------------------------------------------------------------------------
 ;; Highlight matching parenthesis
 (evil-goggles-mode)
-(setq evil-goggles-duration 0.500)
+(setq evil-goggles-duration 0.200)
 ;; list of all on/off variables, their default value is `t`:
 (setq evil-goggles-enable-delete nil)
 (setq evil-goggles-enable-change nil)
