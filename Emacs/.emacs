@@ -131,6 +131,17 @@
 ;; Auto-aligning in same column
 ;(racket-align 1)
 
+;; Highlight parens
+(defface hi-pink
+  '((((background dark)) (:background "NONE" :foreground "#ff66d9"))
+    (t (:background "NONE")))
+  "Face for hi-lock mode."
+  :group 'hi-lock-faces)
+(add-hook 'racket-mode-hook '(lambda ()
+			       (highlight-regexp "[(){}]" 'hi-pink)
+			       ;(highlight-regexp "\[" 'hi-pink)
+			       ;(highlight-regexp "\]" 'hi-pink)
+			       ))
 
 ;; ------------------------------------------------------------------------------
 ;; Paredit
