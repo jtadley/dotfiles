@@ -4,6 +4,7 @@ filetype plugin on
 execute pathogen#infect()
 
 let mapleader=","
+set clipboard=unnamedplus
 
 " ---------------------------------------------------------------------
 " Line numbering
@@ -11,7 +12,7 @@ set relativenumber
 set number
 
 " ---------------------------------------------------------------------
-" Automatic Command LIne History
+" Automatic Command Line History
 nnoremap : q:i
 nnoremap / q/i
 
@@ -40,7 +41,7 @@ set scrolloff=10
 set laststatus=2
 
 " ---------------------------------------------------------------------
-" Highlight brackets, % to switch between
+" Highlight matching parenthesis
 set matchpairs+=<:>
 "
 " ---------------------------------------------------------------------
@@ -51,7 +52,7 @@ endif
 " ---------------------------------------------------------------------
 " Coloring
 syntax on
-colorscheme gruvbox
+colorscheme adley
 set background=dark
 " set background=dark
 " autocmd VimEnter * hi Normal ctermbg=None
@@ -59,7 +60,7 @@ set background=dark
 " scheakur
 nnoremap <Leader>c1 :colorscheme torte<cr>
 nnoremap <Leader>c2 :colorscheme lucius<cr>
-nnoremap <Leader>c3 :colorscheme archery<cr>
+nnoremap <Leader>c3 :colorscheme adley<cr>
 nnoremap <Leader>c4 :colorscheme seoul256<cr>
 nnoremap <Leader>c5 :colorscheme jellybeans<cr>
 nnoremap <Leader>c6 :colorscheme lightning<cr>
@@ -134,9 +135,11 @@ nnoremap <Leader>jc :! javac %:p && java %:t:r<CR>
 autocmd FileType scheme nnoremap <F5> :! raco test %:p<CR>
 autocmd FileType tex nnoremap <F5> :! pdflatex %:p && rm %:t:r.aux && rm %:t:r.log<CR>
 autocmd FileType dafny nnoremap <F5> :! dafny %:p<CR>
-autocmd FileType markdown nnoremap <F5> :! pandoc %:p -t beamer -o %:t:r.pdf<CR>
+autocmd FileType markdown nnoremap <F5> :! pandoc %:p -f markdown_github --pdf-engine=pdflatex -o %:t:r.pdf<CR>
+autocmd FileType markdown nnoremap <F6> :! pandoc %:p -t beamer -o %:t:r.pdf<CR>
 autocmd FileType haskell nnoremap <F5> :! ghc -o %:t:r %:p && ./%:t:r && rm *.hi && rm *.o<CR>
 autocmd FileType java nnoremap <F5> :! javac %:p && java %:t:r<CR>
+autocmd FileType python nnoremap <F5> :! python3.7 %:p<CR>
 
 "autocmd VimLeave *.tex !texclear %
 
@@ -170,7 +173,7 @@ function! Toggle_bg()
 			set background=light
 			let t:is_bg = 2
 		else
-			colorscheme gruvbox
+			colorscheme adley
 			set background=dark
 			let t:is_bg = 0
 		endif
