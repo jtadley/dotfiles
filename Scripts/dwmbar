@@ -78,7 +78,7 @@ status() { \
 	done && echo "$delim"
 
 	# Date and time.
-	date '+%Y %b %d (%a) %I:%M%p'
+	date -u '+%Y %b %d (%a) %I:%M%p'
 	}
 
 while :; do
