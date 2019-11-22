@@ -24,7 +24,7 @@ nnoremap L $
 " ---------------------------------------------------------------------
 " Tabs
 set tabstop=2
-set softtabstop=0 noexpandtab
+set softtabstop=0
 set shiftwidth=2
 set smarttab
 
@@ -118,25 +118,18 @@ nnoremap <leader>s :mksession<CR>
 nnoremap <Leader>, :noh<cr>
 
 " ---------------------------------------------------------------------
-"nnoremap <Leader>rt :! raco test %:p<CR>
-"nnoremap <Leader>ct :! pdflatex %:p<CR>
-"nnoremap <Leader>ta :! entrlatex %:p<CR>
-"nnoremap <Leader>ta :! ~/Scripts/entrlatex %:p &<CR>
-"nnoremap <Leader>cd :! dafny %:p<CR>
+"  Execution
 nnoremap <Leader>md :! make download<CR>
 nnoremap <Leader>mt :! make test<CR>
 nnoremap <Leader>mm :! make<CR>
 nnoremap <Leader>ol :! eval `opam config env`<CR>
-"nnoremap <Leader>pc :! pandoc %:p -t beamer -o out.pdf<CR>
-"nnoremap <Leader>pa :! ~/Scripts/entrpandoc %:p &<CR>
-nnoremap <Leader>hs :! ghc -o out %:p && ./out<CR>
-nnoremap <Leader>jc :! javac %:p && java %:t:r<CR>
 
 autocmd FileType scheme nnoremap <F5> :! raco test %:p<CR>
 autocmd FileType tex nnoremap <F5> :! pdflatex %:p && rm %:t:r.aux && rm %:t:r.log<CR>
 autocmd FileType dafny nnoremap <F5> :! dafny %:p<CR>
 autocmd FileType markdown nnoremap <F5> :! pandoc %:p -f markdown_github --pdf-engine=pdflatex -o %:t:r.pdf<CR>
 autocmd FileType markdown nnoremap <F6> :! pandoc %:p -t beamer -o %:t:r.pdf<CR>
+autocmd FileType markdown nnoremap <F7> :! pandoc %:p -f markdown_github --pdf-engine=xelatex -o %:t:r.pdf<CR>
 autocmd FileType haskell nnoremap <F5> :! ghc -o %:t:r %:p && ./%:t:r && rm *.hi && rm *.o<CR>
 autocmd FileType java nnoremap <F5> :! javac %:p && java %:t:r<CR>
 autocmd FileType python nnoremap <F5> :! python3.7 %:p<CR>
@@ -191,7 +184,12 @@ augroup END
 " ---------------------------------------------------------------------
 "  RACKET
 autocmd FileType scheme set expandtab
+"autocmd FileType scheme RainbowParenthesesActivate<CR>
+autocmd BufNewFile,BufRead	*.pie	set syntax=scheme
 
+" ---------------------------------------------------------------------
+"  HASKELL
+autocmd FileType haskell set expandtab
 
 " ---------------------------------------------------------------------
 "  RAINBOW PARENTHESES
