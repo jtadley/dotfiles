@@ -1,0 +1,19 @@
+#!/bin/sh
+# /usr/local/bin
+
+TOTAL_BAT=0
+
+for x in /sys/class/power_supply/BAT?/capacity;
+do
+TOTAL_BAT=$(echo $TOTAL_BAT + $(cat $x) | bc)
+done
+
+if ((TOTAL_BAT < 20));
+then
+notify-send "Battery Extremely Low";
+else
+if ((TOTAL_BAT < 40));
+then
+notify-send "Battery Low";
+fi;
+fi;
