@@ -8,11 +8,11 @@ do
 TOTAL_BAT=$(echo $TOTAL_BAT + $(cat $x) | bc)
 done
 
-if ((TOTAL_BAT < 20));
+if [ "$TOTAL_BAT" -lt 20 ];
 then
 notify-send "Battery Extremely Low";
 else
-if ((TOTAL_BAT < 40));
+if [ "$TOTAL_BAT" -lt 40 ];
 then
 notify-send "Battery Low";
 fi;
