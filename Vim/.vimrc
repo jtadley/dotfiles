@@ -201,5 +201,10 @@ nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " ---------------------------------------------------------------------
+"  LATEX
+" goto next hole
+autocmd FileType tex nnoremap <Space><Space> /(<>)<CR>:noh<CR>4xi
+
+" ---------------------------------------------------------------------
 "  Highlighted Yank
 let g:highlightedyank_highlight_duration = 500
