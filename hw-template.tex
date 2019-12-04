@@ -1,0 +1,212 @@
+\documentclass{article} \usepackage{scrextend} \usepackage{fancyhdr} \usepackage{extramarks}
+
+%%% PACKAGES %%%
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{stackrel}
+\usepackage{enumerate}
+\usepackage{todonotes}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{stmaryrd}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usetikzlibrary{automata,cd,positioning}
+
+%%% THEOREMS %%%
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{assertion}{Assertion}
+\newtheorem{claim}{Claim}
+\newtheorem*{claim*}{Claim}
+\newtheorem*{folk}{Folklore Theorem}
+\newtheorem*{definition*}{Definition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem*{question}{Question}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{conv}[theorem]{Convention}
+\newtheorem*{problem}{Problem}
+
+\newcommand{\solution}{\textbf{\large Solution}}
+
+
+%%% DEFINITIONS %%%
+\def\e{\varepsilon}
+\def\d{\delta}
+\def\a{\alpha}
+\def\t{\tau}
+\def\l{\lambda}
+\def\L{\Lambda}
+\def\A{\mathcal{A}}
+\def\B{\mathcal{B}}
+\def\D{\mathcal{D}}
+\def\T{\mathcal{T}}
+\def\V{\mathcal{V}}
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\tab{~~~~~}
+\def\rr{\rrbracket}
+\def\ll{\llbracket}
+\def\diag{\text{diag}}
+\def\mov{\text{move}}
+\newcommand{\Tau}{\mathrm{T}}
+\def\phi{\varphi}
+\def\comp{\textit{comp}}
+\def\decode{\textsf{decode}}
+\def\length{\textsf{length}}
+\def\append{\textsf{append}}
+\def\Tot{\textit{Tot}}
+\def\Con{\textit{Con}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% swap abs and norm
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+%%% Document Settings %%%
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+%%% PAGE SETTINGS %%%
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%%% CREATE PROBLEM SECTIONS %%%
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+
+%%% INITIALIZE COUNTERS %%%
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%%% HOMEWORK PROBLEM ENVIRONMENT %%%
+\newenvironment{homeworkProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{homeworkProblemCounter}{#1}
+    \fi
+    \section{Problem \arabic{homeworkProblemCounter}}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{homeworkProblemCounter}
+}{
+    \exitProblemHeader{homeworkProblemCounter}
+}
+
+
+%%% HOMEWORK DETAILS %%%
+\newcommand{\hmwkTitle}{(<>)}
+\newcommand{\hmwkDueDate}{(<>)}
+\newcommand{\hmwkClass}{(<>)}
+\newcommand{\hmwkClassTime}{(<>)}
+\newcommand{\hmwkClassInstructor}{(<>)}
+\newcommand{\hmwkAuthorName}{\textbf{Jacob Adley}}
+
+%%% TITLE PAGE %%%
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate\ }\\
+    \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+    \vspace{3in}
+}
+
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+\begin{tabular}{@{}p{.5in}p{4in}@{}}
+Signature: & \hrulefill \\
+& \hmwkAuthorName
+\end{tabular}
+\end{center}
+
+\pagebreak
+
+
+%%% PROBLEMS %%%
+
+\begin{homeworkProblem} %1
+	(<>)
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem} %2
+	(<>)
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem} %3
+	(<>)
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem} %4
+	(<>)
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem} %5
+	(<>)
+\end{homeworkProblem}
+
+\pagebreak
+
+\end{document}
