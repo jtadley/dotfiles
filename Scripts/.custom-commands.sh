@@ -1,5 +1,9 @@
 #!/bin/sh
 
+weather () {
+	curl "wttr.in/?m"
+}
+
 myst () {
 	/usr/bin/st
 }
@@ -15,9 +19,14 @@ cpcd () {
 	cp "$1" "$2"  && cd "$2"
 }
 
+mvcd () {
+	mv "$1" "$2"  && cd "$2"
+}
+
 # Opens a new terminal in current working directory
 nt () {
 	pwd | st &
+	#setsid pwd | st >/dev/null 2>&1 &
 }
 
 # Loads coq and runs vim
@@ -47,7 +56,11 @@ hdmil () {
 }
 
 hdmir () {
-	xrandr --output HDMI2 --auto --left-of eDP1
+	xrandr --output HDMI2 --auto --right-of eDP1
+}
+
+hdmidup () {
+	xrandr --output HDMI2 --auto
 }
 
 xrandrl () {
@@ -55,7 +68,7 @@ xrandrl () {
 }
 
 xrandrr () {
-	xrandr --output "$1" --auto --left-of eDP1
+	xrandr --output "$1" --auto --right-of eDP1
 }
 
 hdmioff () {
@@ -68,6 +81,14 @@ xrandroff () {
 
 vpn () {
 	~/Scripts/vpn
+}
+
+compilersbook () {
+	zathura ~/Documents/Books/Essentials-of-Compilation/build/book.pdf
+}
+
+keybindings () {
+	xmodmap ~/.Xmodmap
 }
 
 rawr () {

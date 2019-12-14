@@ -13,7 +13,7 @@ delim="|"
 testweather() { \
 	[ "$(stat -c %y "$HOME/.local/share/weatherreport" 2>/dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] &&
 		ping -q -c 1 1.1.1.1 >/dev/null &&
-		curl -s "wttr.in/$location" > "$HOME/.local/share/weatherreport" &&
+		curl -s "wttr.in/?m" > "$HOME/.local/share/weatherreport" &&
 		notify-send "Weather" "New weather forecast for today." &&
 		refbar
 }
