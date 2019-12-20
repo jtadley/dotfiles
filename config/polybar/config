@@ -53,7 +53,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm xwindow
 modules-center = top-mem top-cpu temp
-modules-right = bat0 bat1 filesystem vol wlan eth date
+modules-right = bat0 bat1 filesystem vol wlan eth wttr date
 
 tray-position = right
 tray-padding = 0
@@ -115,6 +115,12 @@ format-underline = #4bb3ff
 [module/date]
 type = custom/script
 exec = date -u '+%Y %b %d (%a) %H:%M'
+interval = 25
+
+[module/wttr]
+type = custom/script
+exec = /home/adleypc/Scripts/weather
+format-prefix = "[p,l,h]: "
 
 [module/xwindow]
 type = internal/xwindow
