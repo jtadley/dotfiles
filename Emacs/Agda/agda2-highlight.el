@@ -256,6 +256,7 @@ If `agda2-highlight-face-groups' is nil."
 			(var          "#d7ffff")
 			(warning      "#d7ffff")
 			(warningbg    "#afafff")
+			(errorbg      "#2f2f54")
 			(eph-verbatim "#f1fa8c")
 			(eph-code     "#ff79c6"))
 
@@ -369,12 +370,12 @@ If `agda2-highlight-face-groups' is nil."
 					 :group 'agda2-highlight-faces)
 
 	(defface agda2-highlight-unsolved-meta-face
-					 `((t (:background "yellow")))
+					 `((t (:background ,errorbg)))
 					 "The face used for unsolved meta variables."
 					 :group 'agda2-highlight-faces)
 
 	(defface agda2-highlight-unsolved-constraint-face
-					 `((t (:background "yellow")))
+					 `((t (:background ,errorbg)))
 					 "The face used for unsolved constraints which are not connected to metas."
 					 :group 'agda2-highlight-faces)
 
