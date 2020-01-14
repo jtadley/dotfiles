@@ -25,6 +25,21 @@ foreground-alt = #555
 primary = #ff30fe
 secondary = #be00b8
 alert = #bd2c40
+underline-1 = #f06292
+underline-2 = #ba68c8
+underline-3 = #9575cd
+underline-4 = #7986cb
+underline-5 = #64b5f6
+underline-6 = #4fc3f7
+underline-7 = #4dd0e1
+underline-8 = #4db6ac
+underline-9 = #81c784
+underline-10 = #aed581
+underline-11 = #dce775
+underline-12 = #fff176
+underline-13 = #ffd54f
+underline-14 = #ffb74d
+underline-15 = #ff8a65
 
 [bar/adley-bar]
 enable-ipc = true
@@ -35,7 +50,7 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1
+line-size = 2
 line-color = #f00
 
 border-size = 0
@@ -72,7 +87,7 @@ cursor-scroll = ns-resize
 type = custom/script
 exec = cat /sys/class/power_supply/BAT0/capacity
 interval = 5
-format-underline = #c4ff4b
+format-underline = ${colors.underline-5}
 format-prefix = "bat0: "
 format-suffix = "%"
 
@@ -80,7 +95,7 @@ format-suffix = "%"
 type = custom/script
 exec = cat /sys/class/power_supply/BAT1/capacity
 interval = 5
-format-underline = #4bffdc
+format-underline = ${colors.underline-6}
 format-prefix = "bat1: "
 format-suffix = "%"
 
@@ -88,21 +103,21 @@ format-suffix = "%"
 type = custom/script
 exec = /usr/lib/i3blocks/top-mem
 interval = 1
-format-underline = #c4ff4b
+format-underline = ${colors.underline-2}
 format-prefix = "mem: "
 
 [module/top-cpu]
 type = custom/script
 exec = /usr/lib/i3blocks/top-cpu
 interval = 1
-format-underline = #4bffdc
+format-underline = ${colors.underline-3}
 format-prefix = "cpu: "
 
 [module/temp]
 type = custom/script
 exec = /usr/lib/i3blocks/temp
 interval = 25
-format-underline = #4bb3ff
+format-underline = ${colors.underline-4}
 format-prefix = "temp: "
 
 [module/vol]
@@ -110,17 +125,19 @@ type = custom/script
 exec = amixer get Master | grep -o "[0-9]*%\|\[on\]\|\[off\]"
 format-prefix = "🎵 "
 interval = 1
-format-underline = #4bb3ff
+format-underline = ${colors.underline-8}
 
 [module/date]
 type = custom/script
 exec = date -u '+%Y %b %d (%a) %H:%M'
 interval = 25
+format-underline = ${colors.underline-15}
 
 [module/wttr]
 type = custom/script
 exec = /home/adleypc/Scripts/weather
 format-prefix = "[p,l,h]: "
+format-underline = ${colors.underline-14}
 
 [module/xwindow]
 type = internal/xwindow
@@ -133,6 +150,7 @@ mount-0 = /
 label-mounted = df: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+format-underline = ${colors.underline-7}
 
 
 [module/bspwm]
@@ -140,7 +158,7 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline= ${colors.underline-1}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -199,6 +217,7 @@ card = intel_backlight
 type = internal/network
 interface = wlp4s0
 interval = 3.0
+format-underline = ${colors.underline-9}
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
@@ -221,6 +240,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 type = internal/network
 interface = enp0s31f6
 interval = 3.0
+format-underline = ${colors.underline-9}
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
