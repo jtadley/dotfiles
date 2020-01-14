@@ -3,12 +3,12 @@
 #
 
 # terminal emulator
-super + Return
-	st
+super + shift + Return
+	$TERMINAL
 
 # program launcher
 super + p
-	dmenu_run
+	dmenu_run -fn "Source Code Pro:size=10" -nb "#222222" -nf "#bbbbbb" -sb "#16A085" -sf "#eeeeee"
 
 # make sxhkd reload its configuration files:
 super + Escape
