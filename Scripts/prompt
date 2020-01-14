@@ -3,4 +3,4 @@
 # $1 is message
 # $2 is what to run
 
-[ $(echo -e "No\nYes" | dmenu -i -p "$1") == "Yes" ] && $2
+[ $(echo -e "No\nYes" | dmenu -fn "Source Code Pro:size=10" -nb "#222222" -nf "#bbbbbb" -sb "#16A085" -sf "#eeeeee" -i -p "$1") == "Yes" ] && $2
