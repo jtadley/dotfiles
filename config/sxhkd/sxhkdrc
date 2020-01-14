@@ -23,8 +23,6 @@ super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-#super + {_,shift + }w
-	#bspc node -{c,k}
 super + shift + c
 	bspc node -k
 
@@ -92,6 +90,10 @@ super + {o,i}
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#focus or send to different monitor
+super + shift + {comma,period}
+	bspc monitor -f {west,east}
 
 #
 # preselect
