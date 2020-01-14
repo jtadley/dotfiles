@@ -40,6 +40,10 @@ super + y
 super + space
 	bspc node -s biggest
 
+# poweroff prompt
+super + shift + x
+	prompt "Shutdown computer?" "shutdown"
+
 #
 # state/flags
 #
@@ -61,12 +65,15 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+super + {p,b}
+	bspc node -f @{parent,brother}
+
+super + shift {p,b}
+	bspc node -f @{first,second}
 
 # focus the next/previous node in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local
+super + {comma,period}
+	bspc node -f {prev,next}.local
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
