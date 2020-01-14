@@ -20,10 +20,12 @@ testweather() { \
 
 status() { \
 	# PROCESSES
-	echo "☯"
+	echo "MEM"
 	/usr/lib/i3blocks/top-mem
+
 	echo "$delim"
-	echo "☮"
+
+	echo "CPU"
 	/usr/lib/i3blocks/top-cpu
 	echo "$delim"
 
@@ -43,7 +45,7 @@ status() { \
 		echo "$delim"
 
 	# VOLUME
-	amixer get Master | grep -o "[0-9]*%\|\[on\]\|\[off\]" | sed "s/\[on\]/🎵/;s/\[off\]//"
+	amixer get Master | grep -o "[0-9]*%\|\[on\]\|\[off\]" | sed "s/\[on\]/🎵/;s/\[off\]//" | head -n 2
 
 	echo "$delim"
 
@@ -54,7 +56,7 @@ status() { \
 
 	echo " $delim"
 
-	/usr/lib/i3blocks/iface
+	# /usr/lib/i3blocks/iface
 
 	echo "$delim"
 
