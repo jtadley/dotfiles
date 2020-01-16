@@ -256,6 +256,8 @@ If `agda2-highlight-face-groups' is nil."
 			(var          "#d7ffff")
 			(warning      "#d7ffff")
 			(warningbg    "#afafff")
+			(record       "#758eff")
+			(field        "#ff84fd")
 			(errorbg      "#2f2f54")
 			(eph-verbatim "#f1fa8c")
 			(eph-code     "#ff79c6"))
@@ -314,7 +316,7 @@ If `agda2-highlight-face-groups' is nil."
 					 :group 'agda2-highlight-faces)
 
 	(defface agda2-highlight-field-face
-					 `((t (:foreground "DeepPink2")))
+					 `((t (:foreground ,field)))
 					 "The face used for record fields."
 					 :group 'agda2-highlight-faces)
 
@@ -350,7 +352,7 @@ If `agda2-highlight-face-groups' is nil."
 					 :group 'agda2-highlight-faces)
 
 	(defface agda2-highlight-record-face
-					 `((t (:foreground "medium blue")))
+					 `((t (:foreground ,record)))
 					 "The face used for record types."
 					 :group 'agda2-highlight-faces)
 
