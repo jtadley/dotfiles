@@ -332,7 +332,7 @@ If `agda2-highlight-face-groups' is nil."
 					 :group 'agda2-highlight-faces)
 
 	(defface agda2-highlight-postulate-face
-					 `((t (:foreground "medium blue")))
+					 `((t (:foreground ,record)))
 					 "The face used for postulates."
 					 :group 'agda2-highlight-faces)
 
