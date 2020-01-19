@@ -63,15 +63,18 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = mono:pixelsize=9;1
-font-1 = Source Code Pro:size=8;1
-font-2 = siji:pixelsize=10;1
+;font-0 = mono:pixelsize=9;1
+;font-1 = Source Code Pro:size=10;1
+;font-2 = Wuncon Siji:pixelsize=10;1
+font-0 = Source Code Pro:size=10;1
+font-1 = Source Code Pro:size=10;1
+font-2 = Source Code Pro:size=10;1
 
 #modules-left = bspwm xwindow
 modules-left = bspwm
 #modules-center = top-mem top-cpu temp
 modules-center = tabs
-modules-right = bat0 bat1 filesystem vol wlan eth wttr date
+modules-right = charging bat0 bat1 filesystem vol wlan eth wttr date
 
 tray-position = right
 tray-padding = 0
@@ -233,6 +236,12 @@ format-underline = ${colors.underline-15}
 type = custom/script
 exec = /usr/local/bin/weather
 format-underline = ${colors.underline-14}
+
+[module/charging]
+type = custom/script
+; exec = /usr/local/bin/charging | sed 's/charging/⚡/g'
+exec = /usr/local/bin/charging | sed 's/charging/Ω/g'
+interval = 1
 
 [module/xwindow]
 type = internal/xwindow
@@ -403,38 +412,6 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = AC
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
