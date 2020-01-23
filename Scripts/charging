@@ -1,8 +1,13 @@
 #!/bin/sh
 
-CHARGING=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state | grep " charging")
+CHARGINGBAT0=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state | grep " charging")
+CHARGINGBAT1=$(upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep state | grep " charging")
 
-if [ -z "$CHARGING" ]
-then echo ""
+if [ -z "$CHARGINGBAT0" ]
+then
+	if [ -z "$CHARGINGBAT1" ]
+	then echo ""
+	else echo "charging"
+	fi
 else echo "charging"
 fi
