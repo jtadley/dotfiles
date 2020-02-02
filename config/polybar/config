@@ -244,6 +244,7 @@ interval = 1
 type = custom/script
 exec = /usr/local/bin/print-storage
 interval = 25
+format-underline = ${colors.underline-7}
 
 [module/xwindow]
 type = internal/xwindow
