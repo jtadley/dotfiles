@@ -1,0 +1,3 @@
+#!/bin/sh
+
+df | grep nvme0n1p2 | grep -o '[0-9]\{1,3\}%'

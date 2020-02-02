@@ -63,18 +63,15 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-;font-0 = mono:pixelsize=9;1
-;font-1 = Source Code Pro:size=10;1
-;font-2 = Wuncon Siji:pixelsize=10;1
-font-0 = Source Code Pro:size=10;1
-font-1 = Source Code Pro:size=10;1
-font-2 = Source Code Pro:size=10;1
+font-0 = SourceCodePro-Regular:size=10;1
+font-1 = SourceCodePro-Regular:size=10;1
+font-2 = Wuncon Siji:pixelsize=10;1
 
 #modules-left = bspwm xwindow
 modules-left = bspwm
 #modules-center = top-mem top-cpu temp
 modules-center = tabs
-modules-right = charging bat0 bat1 filesystem vol wlan eth wttr date
+modules-right = charging bat0 bat1 df vol wlan eth wttr date
 
 tray-position = right
 tray-padding = 0
@@ -111,9 +108,9 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = mono:pixelsize=9;1
-font-1 = Source Code Pro:size=8;1
-font-2 = siji:pixelsize=10;1
+font-0 = SourceCodePro-Regular:size=10;1
+font-1 = SourceCodePro-Regular:size=10;1
+font-2 = Wuncon Siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = tabs
@@ -154,9 +151,9 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = mono:pixelsize=9;1
-font-1 = Source Code Pro:size=8;1
-font-2 = siji:pixelsize=10;1
+font-0 = SourceCodePro-Regular:size=10;1
+font-1 = SourceCodePro-Regular:size=10;1
+font-2 = Wuncon Siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = tabs
@@ -242,6 +239,11 @@ type = custom/script
 ; exec = /usr/local/bin/charging | sed 's/charging/⚡/g'
 exec = /usr/local/bin/charging | sed 's/charging/Ω/g'
 interval = 1
+
+[module/df]
+type = custom/script
+exec = /usr/local/bin/print-storage
+interval = 25
 
 [module/xwindow]
 type = internal/xwindow
