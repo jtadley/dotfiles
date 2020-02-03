@@ -1,6 +1,6 @@
 #!/bin/sh
 
-percentage=$(df | grep nvme0n1p2 | grep -o '[0-9]\{1,3\}%')
+percentage=$(df | grep '\s/$' | grep -o '[0-9]\{1,3\}%')
 
 echo "df: $percentage"
 
