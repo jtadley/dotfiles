@@ -250,13 +250,14 @@ If `agda2-highlight-face-groups' is nil."
 			(keyword      "#afafff")
 			(const        "#5fffaf")
 			(comment      "#8787af")
+			(record       "#d75f87")
 			(func         "#00ffff")
 			(str          "#afafff")
 			(type         "#afd7ff")
 			(var          "#d7ffff")
 			(warning      "#d7ffff")
 			(warningbg    "#afafff")
-			(record       "#758eff")
+			(postulate    "#758eff")
 			(field        "#ff84fd")
 			(errorbg      "#2f2f54")
 			(eph-verbatim "#f1fa8c")
@@ -332,7 +333,7 @@ If `agda2-highlight-face-groups' is nil."
 					 :group 'agda2-highlight-faces)
 
 	(defface agda2-highlight-postulate-face
-					 `((t (:foreground ,record)))
+					 `((t (:foreground ,postulate)))
 					 "The face used for postulates."
 					 :group 'agda2-highlight-faces)
 
