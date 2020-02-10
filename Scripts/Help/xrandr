@@ -1,0 +1,5 @@
+xrandr : display output devices
+xrandr --output DEVICE_NAME --auto : duplicate display
+xrandr --output DEVICE_NAME --off : turn off display
+xrandr --output DEVICE_NAME --left-of DEVICE_NAME : display to left
+xrandr --output DEVICE_NAME --right-of DEVICE_NAME : display to right

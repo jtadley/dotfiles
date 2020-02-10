@@ -1,0 +1,15 @@
+C-M-f     : forward
+C-M-b     : backward
+M-(       : wrap
+M-s       : splice
+M-<up>    : splice sexp killing backward
+M-<down>  : splice sexp killing forward
+M-r       : raise sexp
+C-)       : slurp sexp
+C-}       : barf sexp
+C-(       : backward slurp sexp
+C-{       : backward barf sexp
+M-S       : split sexp
+M-J       : join sexp
+C-c C-M-l : recentre on sexp
+M-q       : reindent definition

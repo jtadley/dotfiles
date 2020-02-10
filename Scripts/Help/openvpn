@@ -1,0 +1,4 @@
+/etc/openvpn : location
+sudo openvpn <FileName>.ovpn : launch
+p5670233 : username
+Woodburnboyz123! : password

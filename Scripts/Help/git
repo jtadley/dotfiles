@@ -1,0 +1,4 @@
+git tag tag-name                   : create tag
+git push --tags origin master      : push tags
+git tag -d tag-name                : commit delete of tag
+git push origin :ref/tags/tag-name : push tag delete
