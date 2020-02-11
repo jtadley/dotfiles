@@ -1,6 +1,6 @@
 #!/bin/sh
 # /usr/local/bin
 
-file=$(ls ~/Scripts/Help/* | dmenu -fn "Source Code Pro:size=10" -nb "#222222" -nf "#bbbbbb" -sb "#16A085" -sf "#eeeeee")
+file=$(ls ~/Scripts/Help | sed 's/.*\///' | dmenu -fn "Source Code Pro:size=10" -nb "#222222" -nf "#bbbbbb" -sb "#16A085" -sf "#eeeeee")
 
-[ -n "$file" ] && cat "$file" | dmenu -fn "Source Code Pro:size=10" -nb "#222222" -nf "#bbbbbb" -sb "#16A085" -sf "#eeeeee" -l 20
+[ -n "$file" ] && cat ~/Scripts/Help/"$file" | dmenu -fn "Source Code Pro:size=10" -nb "#222222" -nf "#bbbbbb" -sb "#16A085" -sf "#eeeeee" -l 20
