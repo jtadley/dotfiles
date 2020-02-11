@@ -1,0 +1,126 @@
+k | Look Around
+v | View Units
+v | g | general - Name, occupation, and skills.
+v | i | inventory - Shows all the items the creature is carrying. Also shows the bloodstains, mud and goo that accumulates on creatures.
+v | p | preferences - This menu includes two sub-menus:
+v | p | l | labor - This lists which types of jobs the dwarf will accept. Very important for controlling their behavior.
+v | p | e | Work Animals - Assign trained animals to this dwarf.
+v | w | wounds - Shows the creature's health. Bright white means the body part is unharmed. Effects like "Thirsty" and "Unconscious" are also listed here.
+v | z | View Profile - Views a dwarf's profile. From here, you can view thoughts and preferences, view his relationships, and give him a custom nickname or profession title.
+v | Enter View Job - Shows the creature's current job, if they have one. (Some jobs/activities are unviewable.)
+q | Query Rooms/Buildings
+q | s | suspend construction of a room or object
+q | r | mark it for removal
+q | i | interact with its specific functionality.
+t | View items in buildings
+b | Build
+b | w | Workshops
+b | e | Furnaces
+b | C | Construction
+b | T | Traps
+b | M | Machine components
+d | Designate
+d | d | Mine - Mark solid walls to mine
+d | h | Channel - Mark to solid walls or floors to channel downwards. This will create a ramp on the Z-level below the miner.
+d | z | Remove Upstairs/Ramps - Mark stairs and ramps to remove them.
+d | u | Upward Stairway - Mark to dig up stairs into solid wall.
+d | j | Downward Stairway - Mark to dig down stairs into either a solid wall or a floor.
+d | i | Up/Down Stairway - Mark to dig up/down stairs into a solid wall.
+d | r | Upward Ramp - Mark to dig a ramp into a solid wall
+d | t | Chop Down Trees - Mark trees to be cut
+d | p | Gather Plants - Mark plants to be gathered
+d | s | Smooth Stone - Mark walls or floor for an engraver to smooth. This must be done before you can engrave or carve fortifications.
+d | e | Engrave Stone - Mark smoothed walls or floors to engrave art into.
+d | a | Carve Fortifications - Mark smoothed walls to carve fortifications into.
+d | V | Toggle Engravings - Mark engraved tiles to toggles their display.
+d | x | Remove Designation - Removes any designation that was made with the d menu
+d | n | Remove Constructions - Marks constructions for removal.
+d | b | Set Building/Item Properties - Used to mass designate entire areas
+d | b | c | Claim Items/Buildings
+d | b | f | Forbid Items/Buildings
+d | b | m | Melt
+d | b | M | Remove Melt
+d | b | d | Dump
+d | b | D | Remove Dump
+d | b | h | Hide Items/Buildings
+d | b | H | Unhide Items/Buildings
+d | o | Set Traffic Areas - Set traffic areas.
+p | Stockpile
+p | a | Animal
+p | u | Furniture Storage
+p | y | Corpses
+p | s | Stone
+p | e | Gem
+p | h | Cloth
+p | z | Ammo
+p | g | Finished Goods
+p | p | Weapons
+p | f | Food
+p | w | Wood
+p | b | Bar/Block
+p | l | Leather
+p | n | Coins
+p | d | Armor
+i | Zones mark an activity zone for drinking water, fishing, dump, pen/pasture, pit/pond, sand collection, clay collection, meeting hall, hospital, animal training.
+i | s | Squads is used to control your military squads.
+i | k | Attack - Selected squad will attack the selected enemies.
+i | m | Move - Selected squad will station to a specific location you choose.
+i | o | Cancel orders - Cancels a station or kill order.
+i | z | Center on Squad - Zooms to the commander of the squad.
+i | s | View Schedule - Brings up the military scheduling screen.
+i | t | Sched - Toggles between all available schedules.
+i | p | Select Individuals - Lets you issue orders to individual soldiers instead of the entire squad.
+w | Burrows
+w | a | Add - Creates a new burrow.
+w | d | Delete - Deletes the selected burrow.
+w | Enter | Define this Burrow - Creates a new burrow.
+w | Enter | n | Name burrow - Give your burrow a name.
+w | Enter | c | Change symbol selector - Used in conjunction with numpad -+ to customize the color and symbol used for this burrow.
+w | Enter | Enter | Start Rectangle - Use the keyboard to designate a rectangular area.
+w | Enter | b | Mouse brush - Used to toggle mouse brush sizes. Useful if you use the mouse to click and drag to define a large irregular burrow.
+w | Enter | r | Currently painting/erasing - Changes the action of the rectangle and mouse brush to add or subtract from the burrow.
+w | Enter | z | Center on burrow - Self-explanatory.
+w | c | Add citizens to burrow - displays a list of your entire population. Press Enter to add dwarves to the burrow.
+w | z | Center on burrow - Self-explanatory.
+w | Notes One of the main uses is to setup patrol routes for your military.
+w | p | Place - creates a new point at the cursor.
+w | d | Delete - Deletes the selected point.
+w | n | Name - Give a point a name.
+w | c | Change symbol selector - Used in conjunction with numpad -+ to customize the color and symbol used for new points.
+w | s | Adopt selected symbol - Changes the symbol for an existing point.
+w | t | Note text - Add text to a point.
+w | r | Routes - Opens the routes menu.
+w | r | a | Add route - Creates a new route.
+w | r | d | Del route - Removes selected route.
+w | r | c | Center - After you add waypoints, allows you to center the view over them.
+w | r | n | Name route - Change the name of the selected route.
+w | r | p | Back to points/notes - Returns to the main notes menu.
+w | r | e | Edit Waypts - Opens a new menu used to add waypoints to the selected route.
+w | r | e | a | Add waypt - Adds the nearest waypoint from the cursor to the route list.
+w | r | e | d | Del waypt - Removes selected waypoint from the route list.
+w | r | e | c | Center - After you add waypoints, allows you to center the view over them.
+w | r | e | n | Name route - Change the name of the selected route.
+w | r | e | p | Back to points/notes - Returns to the main notes menu.
+w | r | e | e | Edit routes - Returns to the routes menu.
+a | Announcements logs the announcements that appear at the bottom of the screen. Use it to see any you missed, or scroll up the early history of your fortress.
+c | Civilizations list of other civilizations that you have personally encountered (and thus within distance for trade or war). Civilizations are marked with a P if you are at peace with them, or with a W if you are at war.
+Tab | lets you check total exports and imports, and standing trade agreements.
+u | Unit List of every creature on the map.
+u | z | Zoom to Creature This takes you to View Creature mode, with the cursor centered on the selected creature.
+u | v | View Profile
+u | b | Zoom to Building Takes you to the building associated with the dwarf's current task. For hauling tasks, this is the destination stockpile.
+u | m | Manager Takes you to the job manager screen.
+m | Military
+m | p | Positions Create and remove squads and assign dwarves to them.
+m | a | Alerts Create configure alerts. Used in conjunction with burrows to define a CIV Alert, a safe place that dwarves will be forced to go when turned on. Can also be used to change the active alert schedule for your squads.
+m | e | Equip Assign armor and weapons to military squads.
+m | n | Uniforms Create or modify uniform templates which can be assigned using the Equip screen.
+m | u | Supplies Controls if a squad carries food and drink.
+m | f | Ammunition Assigns ammunition to squads.
+m | s | Schedule Used to modify the orders for an alert.
+R | Room List all Rooms, Buildings, Stockpiles, and even Activity zones in the fortress.
+l | Locations and Occupations list of the locations designated in your fortress (libraries, temples, & taverns). In this screen you can control the supplies desired for your locations, as well as designate a worker/workers for the location as appropriate.
+n | Nobles & Administrators
+z | Fortress Overview
+o | Options & Orders access the Standing orders
+h | Define or redefine Hotkeys
