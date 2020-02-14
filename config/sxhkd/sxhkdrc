@@ -38,9 +38,9 @@ super + y
 super + space
 	bspc node -s biggest
 
-# poweroff prompt
+# power prompt
 super + shift + x
-	prompt "Shutdown computer?" "shutdown"
+	power_prompt
 
 #
 # state/flags
