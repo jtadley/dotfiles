@@ -6,13 +6,15 @@ List of Programs:
 
 | Use             | Program             |
 |-----------------|---------------------|
-| File Viewing    | zathura (mupdf)     |
-| Web Browser     | surf / firefox      |
+| File Viewing    | zathura             |
+| Web Browser     | surf / brave        |
 | Terminal        | st                  |
-| Text Editor     | vim                 |
+| Text Editor     | vim / emacs         |
 | Slides          | markdown via pandoc |
 | PDF             | markdown / latex    |
 | Spreadsheet     | sc-im               |
 | Music           | cmus                |
-| Window Manager  | dwm                 |
+| Window Manager  | bspwm               |
+| Keybindings     | sxhkd               |
+| Status Bar      | polybar             |
 | Display Manager | lightdm             |
