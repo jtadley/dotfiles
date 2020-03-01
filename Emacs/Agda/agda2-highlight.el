@@ -383,12 +383,12 @@ If `agda2-highlight-face-groups' is nil."
 					 :group 'agda2-highlight-faces)
 
 	(defface agda2-highlight-termination-problem-face
-					 `((t (:background "light salmon")))
+					 `((t (:background ,bg5)))
 					 "The face used for termination problems."
 					 :group 'agda2-highlight-faces)
 
 	(defface agda2-highlight-positivity-problem-face
-					 `((t (:background "peru")))
+					 `((t (:background ,bg5)))
 					 "The face used for positivity problems."
 					 :group 'agda2-highlight-faces)
 
@@ -398,12 +398,12 @@ If `agda2-highlight-face-groups' is nil."
 					 :group 'agda2-highlight-faces)
 
 	(defface agda2-highlight-coverage-problem-face
-					 `((t (:background "wheat")))
+					 `((t (:background ,bg5)))
 					 "The face used for coverage problems."
 					 :group 'agda2-highlight-faces)
 
 	(defface agda2-highlight-catchall-clause-face
-					 `((t (:background "white smoke")))
+					 `((t (:background ,bg5)))
 					 "The face used for catchall clauses."
 					 :group 'agda2-highlight-faces)
 
