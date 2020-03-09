@@ -5,11 +5,73 @@ TOTAL_BAT=0
 
 CHARGING=$(charging)
 
+touch /tmp/battery_status
+
 if [ ! -z "$CHARGING" ]
 then
-	echo ⚡
-else
+	# echo ⚡
+	CYCLE=$(cat /tmp/battery_status)
 
+	if [ -z "$CYCLE" ]
+	then
+		echo 0 > /tmp/battery_status
+	fi
+
+	if [ "$CYCLE" -lt 0 ]
+	then
+		echo 0 > /tmp/battery_status
+	fi
+
+	if [ "$CYCLE" -lt 1 ]
+	then
+		echo ▁
+		echo 1 > /tmp/battery_status
+	else
+		if [ "$CYCLE" -lt 2 ]
+		then
+			echo ▂
+			echo 2 > /tmp/battery_status
+		else
+			if [ "$CYCLE" -lt 3 ]
+			then
+				echo ▃
+				echo 3 > /tmp/battery_status
+			else
+				if [ "$CYCLE" -lt 4 ]
+				then
+					echo ▄
+					echo 4 > /tmp/battery_status
+				else
+					if [ "$CYCLE" -lt 5 ]
+					then
+						echo ▅
+						echo 5 > /tmp/battery_status
+					else
+						if [ "$CYCLE" -lt 6 ]
+						then
+							echo ▆
+							echo 6 > /tmp/battery_status
+						else
+							if [ "$CYCLE" -lt 7 ]
+							then
+								echo ▇
+								echo 7 > /tmp/battery_status
+							else
+								echo █
+								echo 0 > /tmp/battery_status
+							fi
+						fi
+					fi
+				fi
+			fi
+		fi
+	fi
+								
+
+else
+	
+	echo 10 > /tmp/battery_status
+	
 	for x in /sys/class/power_supply/BAT?/capacity;
 	do
 		TOTAL_BAT=$(echo $TOTAL_BAT + $(cat $x) | bc)
