@@ -247,7 +247,9 @@ format-underline = ${colors.underline-14}
 [module/charging]
 type = custom/script
 ; exec = /usr/local/bin/charging | sed 's/charging/⚡/g'
-exec = /usr/local/bin/charging | sed 's/charging/Ω/g'
+; exec = /usr/local/bin/charging | sed 's/charging/Ω/g'
+exec = battery
+format-font = 2
 interval = 1
 
 [module/df]
