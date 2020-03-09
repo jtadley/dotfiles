@@ -70,8 +70,6 @@ then
 
 else
 	
-	echo 10 > /tmp/battery_status
-	
 	for x in /sys/class/power_supply/BAT?/capacity;
 	do
 		TOTAL_BAT=$(echo $TOTAL_BAT + $(cat $x) | bc)
