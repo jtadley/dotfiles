@@ -1,0 +1,55 @@
+#!/bin/sh
+# /usr/local/bin
+
+TOTAL_BAT=0
+
+CHARGING=$(charging)
+
+if [ ! -z "$CHARGING" ]
+then
+	echo ⚡
+else
+
+	for x in /sys/class/power_supply/BAT?/capacity;
+	do
+		TOTAL_BAT=$(echo $TOTAL_BAT + $(cat $x) | bc)
+	done
+	
+	
+	if [ "$TOTAL_BAT" -lt 25 ]
+	then
+		echo ▁
+	else
+		if [ "$TOTAL_BAT" -lt 50 ]
+		then
+			echo ▂
+		else
+			if [ "$TOTAL_BAT" -lt 75 ]
+			then
+				echo ▃
+			else
+				if [ "$TOTAL_BAT" -lt 100 ]
+				then
+					echo ▄
+				else
+					if [ "$TOTAL_BAT" -lt 125 ]
+					then
+						echo ▅
+					else
+						if [ "$TOTAL_BAT" -lt 150 ]
+						then
+							echo ▆
+						else
+							if [ "$TOTAL_BAT" -lt 175 ]
+							then
+								echo ▇
+							else
+								echo █
+							fi
+						fi
+					fi
+				fi
+			fi
+		fi
+	fi
+fi
