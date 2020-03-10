@@ -76,31 +76,31 @@ else
 	done
 	
 	
-	if [ "$TOTAL_BAT" -lt 25 ]
+	if [ "$TOTAL_BAT" -lt 20 ]
 	then
 		echo ▁
 	else
-		if [ "$TOTAL_BAT" -lt 50 ]
+		if [ "$TOTAL_BAT" -lt 60 ]
 		then
 			echo ▂
 		else
-			if [ "$TOTAL_BAT" -lt 75 ]
+			if [ "$TOTAL_BAT" -lt 100 ]
 			then
 				echo ▃
 			else
-				if [ "$TOTAL_BAT" -lt 100 ]
+				if [ "$TOTAL_BAT" -lt 120 ]
 				then
 					echo ▄
 				else
-					if [ "$TOTAL_BAT" -lt 125 ]
+					if [ "$TOTAL_BAT" -lt 140 ]
 					then
 						echo ▅
 					else
-						if [ "$TOTAL_BAT" -lt 150 ]
+						if [ "$TOTAL_BAT" -lt 160 ]
 						then
 							echo ▆
 						else
-							if [ "$TOTAL_BAT" -lt 175 ]
+							if [ "$TOTAL_BAT" -lt 180 ]
 							then
 								echo ▇
 							else
