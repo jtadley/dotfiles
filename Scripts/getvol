@@ -1,0 +1,12 @@
+#!/bin/sh
+
+MUTED=$(amixer sget Master | tail -n 1 | grep off)
+
+if [ -z "$MUTED" ]
+then
+	RES=$(amixer sget Master | tail -n 1 | grep -oP '\[\K\d+%(?=\])')
+
+	echo 🎵 $RES
+else
+	echo muted
+fi
