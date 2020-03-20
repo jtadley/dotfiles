@@ -1,5 +1,0 @@
-sudo make install
-
-make changes to config.def.h and copy over to config.h
-
-patch -p1 filename.diff
