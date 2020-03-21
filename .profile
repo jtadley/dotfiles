@@ -1,9 +1,11 @@
-export QT_QPA_PLATFORMTHEME="qt5ct"
+export PATH=$PATH:$HOME/.scripts
 export EDITOR=/usr/bin/vim
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-# fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER=/usr/bin/surf
-export TERMIANL=/usr/bin/st
-export READER=/usr/bin/zathura
-
-source ~/.custom-commands.sh
+export TERMINAL=/usr/local/bin/st
+export XDG_CONFIG_HOME="$HOME/.config"
+export SCRIPTS_HOME="$HOME/.scripts"
+export SHELL="/usr/bin/zsh"
+export AGDA_DIR="$HOME/.agda"
+export COLOR_FG="#bbbbbb"
+export COLOR_BG="#222222"
+export COLOR_ACC_BG="#85146e"
+export COLOR_ACC_FG="#eeeeee"
