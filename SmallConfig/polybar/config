@@ -187,7 +187,8 @@ format-underline = ${colors.underline-4}
 
 [module/date]
 type = custom/script
-exec = date -u '+%Y %b %d (%a) %H:%M'
+; exec = date -u '+%Y %b %d (%a) %H:%M'
+exec = date -u '+%b %d (%a) %H:%M'
 interval = 25
 format-underline = ${colors.underline-7}
 
