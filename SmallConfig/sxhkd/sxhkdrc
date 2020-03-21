@@ -8,11 +8,14 @@ super + shift + Return
 
 # program launcher
 super + p
-	dmenu_run -fn "Source Code Pro:size=10" -nb "#222222" -nf "#bbbbbb" -sb "#16A085" -sf "#eeeeee"
+	dmenu_run
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+F1
+	firefox
 
 #
 # bspwm hotkeys
