@@ -50,10 +50,8 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = SourceCodePro-Regular:size=8;1
-font-1 = SourceCodePro-Regular:size=10;1
-#font-2 = Wuncon Siji:pixelsize=9;1
+font-1 = Wuncon Siji:pixelsize=9;1
 font-2 = Symbola:pixelsize=9;1
-#font-2 = DejaVuSansMono:pixelsize=8;1
 
 #modules-left = bspwm xwindow
 modules-left = bspwm
@@ -98,8 +96,8 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = SourceCodePro-Regular:size=8;1
-font-1 = SourceCodePro-Regular:size=10;1
-font-2 = Wuncon Siji:pixelsize=8;1
+font-1 = Wuncon Siji:pixelsize=9;1
+font-2 = Symbola:pixelsize=9;1
 
 modules-left = bspwm
 modules-center = tabs
@@ -139,8 +137,8 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = SourceCodePro-Regular:size=8;1
-font-1 = SourceCodePro-Regular:size=10;1
-font-2 = Wuncon Siji:pixelsize=8;1
+font-1 = Wuncon Siji:pixelsize=9;1
+font-2 = Symbola:pixelsize=9;1
 
 modules-left = bspwm
 modules-center = tabs
@@ -224,7 +222,7 @@ interval = 25
 [module/wttr]
 type = custom/script
 exec = weather
-format-font = 2
+format-font = 1
 format-underline = ${colors.underline-14}
 
 [module/charging]
@@ -239,7 +237,7 @@ interval = 1
 type = custom/script
 exec = storage
 interval = 25
-prefix-font = 0
+prefix-font = 1
 format-prefix = "⛃ "
 format-underline = ${colors.underline-7}
 
@@ -326,12 +324,12 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-font = 2
+format-font = 0
 format-connected = <label-connected>
 format-connected-underline = ${colors.underline-9}
 label-connected = %essid%
 
-format-disconnected = 睊 no wifi
+format-disconnected = no wifi
 ;format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.underline-9}
 ;label-disconnected = %ifname% disconnected
