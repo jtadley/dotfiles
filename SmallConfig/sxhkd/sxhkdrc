@@ -17,6 +17,9 @@ super + Escape
 F1
 	firefox
 
+F3
+	emacs
+
 #
 # bspwm hotkeys
 #
