@@ -4,7 +4,13 @@
 #
 # Executed by startx (run your window manager from here)
 
-exec bspwm
+exec bspwm &&
 
-source $HOME/.custom-commands.sh
-xmodmap $HOME/.Xmodmap
+source $HOME/.profile &&
+source $HOME/.custom-commands.sh &&
+
+xmodmap $HOME/.Xmodmap &&
+nitrogen --restore &&
+xinput disable 'SynPS/2 Synaptics TouchPad' &&
+
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
