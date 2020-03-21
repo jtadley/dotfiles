@@ -1,13 +1,10 @@
 ; https://github.com/polybar/polybar
 
 [colors]
-;background = ${xrdb:color0:#222}
 background = #222
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-;primary = #ff2af8
 primary = #ff30fe
 secondary = #be00b8
 alert = #bd2c40
@@ -53,8 +50,6 @@ tray-position = right
 tray-padding = 0
 
 wm-restack = bspwm
-
-;override-redirect = true
 
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
@@ -220,23 +215,6 @@ prefix-font = 1
 format-prefix = "⛃ "
 format-underline = ${colors.underline-3}
 
-[module/ovpn]
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-mount-0 = /
-label-mounted = df: %percentage_used%%
-label-mounted-underline = ${colors.underline-7}
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-label-unmounted-underline = ${colors.underline-7}
-
-
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = true
@@ -293,11 +271,6 @@ bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
 [module/wlan]
 type = internal/network
 interface = wlp3s0
@@ -331,4 +304,3 @@ format-disconnected =
 [global/wm]
 margin-top = 0
 margin-bottom = 0
-
