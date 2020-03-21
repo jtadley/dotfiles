@@ -35,23 +35,26 @@
  )
 
 ;; ------------------------------------------------------------------------------
-;; Font Size
-(set-face-attribute 'default nil :height 130)
+;; Font
+(set-face-attribute 'default	nil
+										:height		130
+										:weight		'normal
+										:width		'normal)
+(set-fontset-font "fontset-default" 'unicode "Symbola")
 
 ;; ------------------------------------------------------------------------------
 ;; Color scheme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'jbeans t)
+(load-theme 'dracula t)
 ;(load-theme 'gruvbox t)
 ;(load-theme 'suscolors t)
 
 ;; ------------------------------------------------------------------------------
 ;; Evil mode
 (add-to-list 'load-path "~/.emacs.d/evil")
+(setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-mode 1)
-; duh
-(setq evil-want-C-u-scroll t)
 
 ;; ------------------------------------------------------------------------------
 ;; Relative line numbers
@@ -155,3 +158,8 @@
 (add-hook 'racket-mode-hook           #'enable-paredit-mode)
 (add-hook 'racket-repl-mode-hook      #'enable-paredit-mode)
 
+
+;; ------------------------------------------------------------------------------
+;; Agda
+(load-file (let ((coding-system-for-read 'utf-8))
+                (shell-command-to-string "agda-mode locate")))
