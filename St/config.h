@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "SourceCodePro-Regular:pixelsize=15:antialias=true:autohint=true";
-static char *font2[] = { "SourceCodePro-Regular:pixelsize=15:antialias=true:autohint=true" };
+static char *font2[] = { "Symbola:pixelsize=11:antialias=true:autohint=true" };
 static int borderpx = 0;
 
 /*
