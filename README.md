@@ -6,15 +6,18 @@ List of Programs:
 
 | Use             | Program             |
 |-----------------|---------------------|
-| File Viewing    | zathura             |
-| Web Browser     | surf / brave        |
-| Terminal        | st                  |
-| Text Editor     | vim / emacs         |
-| Slides          | markdown via pandoc |
-| PDF             | markdown / latex    |
-| Spreadsheet     | sc-im               |
-| Music           | cmus                |
+| OS              | Arch                |
 | Window Manager  | bspwm               |
+| Display Manager | lightdm             |
 | Keybindings     | sxhkd               |
 | Status Bar      | polybar             |
-| Display Manager | lightdm             |
+| Text Editor     | vim / emacs         |
+| Web Browser     | qutebrowser         |
+| Search Engine   | searx               |
+| Terminal        | duckduckgo / st     |
+| File Viewing    | zathura             |
+| Image Viewing   | sxiv                |
+| Slides          | markdown via pandoc |
+| PDF             | markdown / latex    |
+| Music           | cmus                |
+| Spreadsheet     | sc-im               |
