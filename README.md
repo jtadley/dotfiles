@@ -13,8 +13,8 @@ List of Programs:
 | Status Bar      | polybar             |
 | Text Editor     | vim / emacs         |
 | Web Browser     | qutebrowser         |
-| Search Engine   | searx               |
-| Terminal        | duckduckgo / st     |
+| Search Engine   | duckduckgo / searx  |
+| Terminal        | st                  |
 | File Viewing    | zathura             |
 | Image Viewing   | sxiv                |
 | Slides          | markdown via pandoc |
