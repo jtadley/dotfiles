@@ -1,0 +1,118 @@
+Esc : normal mode
+` : set scroll mark
+Tab : cycle completion items
+@ : run macro
+-  : zoom out
++ : zoom in
+= : set zoom level
+q : record macro
+r : reload
+R : reload (bypass cache)
+t : toggle
+T : select tab
+  tsh : toggle scripts for the current host (temporarily)
+  tSh - 'tsh' permanently
+  tsH/tsu : 'tsh' including subdomains / with exact URL
+  tph : toggle plugins
+y : yank
+Y : yank
+  yy : copy/yank URL
+  yY : copy URL to selection
+  yt : copy title to clipboard
+  yT : copy title to selection
+u : undo closing tba
+i : insert mode
+o : open
+O : open in new tab
+p : paste
+P : paste
+  pp : open URL from clipboard
+  pP : open URL from selection
+  Pp : 'pp' in new tab
+  pp : 'pP' in new tab
+  wp : 'pp' in new window
+  wP : 'pP' in new window
+d : close tab
+f : hint (label links)
+F : hint (new tab)
+g : (gg) scroll to top
+G : scroll to bottom / percentage
+  go : edit & open current URL
+  gO : 'go' in new tab
+  xO : 'go' in background tab
+  xo : open in background tab
+  wo : open in new window
+h : scroll left
+H : back
+j : scroll down
+J : next tab
+k : scroll up
+K : previous tab
+l : scroll right
+L : forward
+; : ext. hints
+: : cmd mode
+' : jump to scroll mark
+v : visual mode
+b : load quickmark
+B : load quickmark in new tab
+n : next search
+N : previous search
+m : save quickmark
+M : save bookmark
+. : repeat command
+/ : search
+? : search backward
+[[ : click "previous"-link on page
+]] : click "next"-link on page
+{{ : '[[' in new tab
+}} : ']]' in new tab
+C-A : increment number in URL
+C-X : decrement number in URL
+C-F : page down
+C-B : page up
+C-D : half page down
+C-U : half page up
+th : back in new tab (ct.)
+wh : back in new window (ct.)
+tl : forward in new tab (ct.)
+wl - forward in new window (ct.)
+;b : open hint in background tab
+;f : open hint in foreground tab
+;h : hover over hint
+;i : hint images
+;l : hint images in new tab
+;t : hint inputs
+;o : put hinted URL in cmd. line
+;O : ';o' in new tab
+;y : yank hinted URL to clipboard
+;Y : yank hinted URL to selection
+;r : rapid hinting
+;R : ';r' in new window
+gt : switch tabs by name
+gm/gl/gr : move tab (to index/left/right) (ct.)
+gC : clone tab
+gD : detatch tab
+gf : view page source
+gu : navigate up in URL
+gU : 'gu' in new tab
+sf : save config
+ss : save settings
+sk : bind key
+Ss : show settings
+wi : web inspector
+gd : download page
+ad : cancel download
+co : close other tabs
+cd : clear downloads
+A-num : select tab
+C-tab : select prev. tab
+C-V : passthrough mode
+C-Q : quit
+C-H : home
+C-S : stop loading
+C-A-P : print
+C-E : open editor (in insert mode)
+C-P : prev. history item (in cmd. mode)
+C-N : next history item (in cmd. mode)
+C-D : delete current item (in cmd. mode)
