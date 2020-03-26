@@ -4,7 +4,9 @@
 ##   qute://help/settings.html
 
 bg_color = '#222'
+bg_color_alt = '#1a1a1a'
 fg_color = '#dfdfdf'
+bg_sel = '#4d4d4d'
 
 color1 = '#282828'
 color2 = '#be219e'
@@ -196,6 +198,7 @@ color8_acc = '#42fe67'
 ## for transparency.
 ## Type: QssColor
 # c.colors.hints.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8), stop:1 rgba(255, 197, 66, 0.8))'
+c.colors.hints.bg = color2_acc
 
 ## Font color for hints.
 ## Type: QssColor
@@ -307,7 +310,7 @@ c.colors.statusbar.insert.bg = bg_color
 
 ## Foreground color of the statusbar in insert mode.
 ## Type: QssColor
-c.colors.statusbar.insert.fg = color2_acc
+c.colors.statusbar.insert.fg = fg_color
 
 ## Background color of the statusbar.
 ## Type: QssColor
@@ -323,7 +326,7 @@ c.colors.statusbar.passthrough.bg = bg_color
 
 ## Foreground color of the statusbar in passthrough mode.
 ## Type: QssColor
-c.colors.statusbar.passthrough.fg = color7_acc
+c.colors.statusbar.passthrough.fg = fg_color
 
 ## Background color of the statusbar in private browsing mode.
 ## Type: QssColor
@@ -331,7 +334,7 @@ c.colors.statusbar.private.bg = bg_color
 
 ## Foreground color of the statusbar in private browsing mode.
 ## Type: QssColor
-c.colors.statusbar.private.fg = color8_acc
+c.colors.statusbar.private.fg = fg_color
 
 ## Background color of the progress bar.
 ## Type: QssColor
@@ -352,12 +355,12 @@ c.colors.statusbar.url.hover.fg = color7_acc
 ## Foreground color of the URL in the statusbar on successful load
 ## (http).
 ## Type: QssColor
-c.colors.statusbar.url.success.http.fg = color2_acc
+c.colors.statusbar.url.success.http.fg = fg_color
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (https).
 ## Type: QssColor
-c.colors.statusbar.url.success.https.fg = color2_acc
+c.colors.statusbar.url.success.https.fg = fg_color
 
 ## Foreground color of the URL in the statusbar when there's a warning.
 ## Type: QssColor
@@ -369,7 +372,7 @@ c.colors.tabs.bar.bg = bg_color
 
 ## Background color of unselected even tabs.
 ## Type: QtColor
-c.colors.tabs.even.bg = bg_color
+c.colors.tabs.even.bg = bg_color_alt
 
 ## Foreground color of unselected even tabs.
 ## Type: QtColor
@@ -438,19 +441,19 @@ c.colors.tabs.odd.fg = fg_color
 
 ## Background color of selected even tabs.
 ## Type: QtColor
-c.colors.tabs.selected.even.bg = fg_color
+c.colors.tabs.selected.even.bg = bg_sel
 
 ## Foreground color of selected even tabs.
 ## Type: QtColor
-c.colors.tabs.selected.even.fg = color2_acc
+c.colors.tabs.selected.even.fg = 'white'
 
 ## Background color of selected odd tabs.
 ## Type: QtColor
-c.colors.tabs.selected.odd.bg = fg_color
+c.colors.tabs.selected.odd.bg = bg_sel
 
 ## Foreground color of selected odd tabs.
 ## Type: QtColor
-c.colors.tabs.selected.odd.fg = color2_acc
+c.colors.tabs.selected.odd.fg = 'white'
 
 ## Background color for webpages if unset (or empty to use the theme's
 ## color).
@@ -1049,7 +1052,7 @@ c.content.host_blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/
 
 ## CSS border value for hints.
 ## Type: String
-# c.hints.border = '1px solid #E3BE23'
+c.hints.border = '1px solid ' + color2
 
 ## Characters used for hint strings.
 ## Type: UniqueCharString
@@ -1084,7 +1087,7 @@ c.content.host_blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/
 ##   - number: Use numeric hints. (In this mode you can also type letters from the hinted element to filter and reduce the number of elements that are hinted.)
 ##   - letter: Use the characters in the `hints.chars` setting.
 ##   - word: Use hints words based on the html elements and the extra words.
-# c.hints.mode = 'letter'
+c.hints.mode = 'letter'
 
 ## Comma-separated list of regular expressions to use for 'next' links.
 ## Type: List of Regex
@@ -1106,7 +1109,7 @@ c.content.host_blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/
 
 ## Make characters in hint strings uppercase.
 ## Type: Bool
-# c.hints.uppercase = False
+c.hints.uppercase = False
 
 ## Maximum time (in minutes) between two history items for them to be
 ## considered being from the same browsing session. Items with less time
