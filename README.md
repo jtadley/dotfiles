@@ -8,7 +8,7 @@ List of Programs:
 |-----------------|---------------------|
 | OS              | Arch                |
 | Window Manager  | bspwm               |
-| Display Manager | lightdm             |
+| Display Manager | none                |
 | Keybindings     | sxhkd               |
 | Status Bar      | polybar             |
 | Text Editor     | vim / emacs         |
