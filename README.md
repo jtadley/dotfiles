@@ -21,3 +21,5 @@ List of Programs:
 | PDF             | markdown / latex    |
 | Music           | cmus                |
 | Spreadsheet     | sc-im               |
+| Video Player    | mpv									|
+| Torrent Client  | transmission-cli    |
