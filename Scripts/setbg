@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+if [ -n "$1" ]
+then
+	rm $XDG_CONFIG_HOME/wallpaper/*
+	cp "$1" $XDG_CONFIG_HOME/wallpaper/
+fi
+
+xwallpaper --focus $XDG_CONFIG_HOME/wallpaper/*

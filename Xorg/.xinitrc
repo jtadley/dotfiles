@@ -9,7 +9,7 @@ source $HOME/.profile
 source $HOME/.custom-commands.sh
 
 xmodmap $HOME/.Xmodmap
-nitrogen --restore
+$SCRIPTS_HOME/setbg
 xinput disable 'SynPS/2 Synaptics TouchPad'
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
