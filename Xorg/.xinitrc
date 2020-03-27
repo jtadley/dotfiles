@@ -10,7 +10,7 @@ source $HOME/.custom-commands.sh &
 
 xmodmap $HOME/.Xmodmap &
 $SCRIPTS_HOME/setbg &
-amixer sset Speaker 100- &
+amixer set Speaker 0% mute &
 xinput disable 'SynPS/2 Synaptics TouchPad' &
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources &
