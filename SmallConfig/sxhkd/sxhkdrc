@@ -20,6 +20,21 @@ F1
 F3
 	emacs
 
+XF86AudioMute
+	vol toggle
+
+XF86AudioLowerVolume
+	vol down
+
+XF86AudioRaiseVolume
+	vol up
+
+XF86AudioMicMute
+	amixer sset Capture toggle
+
+XF86Launch1
+	help
+
 #
 # bspwm hotkeys
 #
