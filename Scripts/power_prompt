@@ -1,22 +1,12 @@
 #!/bin/sh
 # /usr/local/bin
+wq
+res=$(echo -e "lock\nexit\nreboot\nshutdown\nsuspend" | dmenu)
 
-res=$(echo -e "lock\nexit\npoweroff" | dmenu -fn "Source Code Pro:size=10" -nb "#222222" -nf "#bbbbbb" -sb "#16A085" -sf "#eeeeee")
-
-if [ -n "$res" ]
-then
-	if [ "lock" == "$res" ]
-	then
-		mandellock
-	else
-		if [ "exit" == "$res" ]
-		then
-			bspc quit
-		else
-			if [ "poweroff" == "$res" ]
-			then
-				poweroff
-			fi
-		fi
-	fi
-fi
+case "$res" in
+	lock)			lock ;;
+	exit)			bspc quit ;;
+	reboot)		reboot ;;
+	shutdown)	shutdown now ;;
+	suspend)	mysuspend ;;
+esac

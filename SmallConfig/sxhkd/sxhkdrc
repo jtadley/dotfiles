@@ -33,7 +33,7 @@ XF86AudioMicMute
 	amixer sset Capture toggle
 
 XF86Launch1
-	help
+	mysuspend
 
 #
 # bspwm hotkeys
