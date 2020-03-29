@@ -1,6 +1,6 @@
 #!/bin/sh
 # /usr/local/bin
-wq
+
 res=$(echo -e "lock\nexit\nreboot\nshutdown\nsuspend" | dmenu)
 
 case "$res" in
