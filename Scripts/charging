@@ -1,13 +1,13 @@
 #!/bin/sh
 
-CHARGINGBAT0=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state | grep " charging")
-CHARGINGBAT1=$(upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep state | grep " charging")
+res=""
 
-if [ -z "$CHARGINGBAT0" ]
-then
-	if [ -z "$CHARGINGBAT1" ]
-	then echo ""
-	else echo "charging"
-	fi
-else echo "charging"
-fi
+for x in /sys/class/power_supply/BAT?/status
+do
+	if [ "$(cat $x)" == "Charging" ];
+	then
+		res="charging"
+	fi;
+done
+
+echo "$res"
