@@ -1,0 +1,5 @@
+#!/bin/sh
+
+client=$(sudo ls /etc/openvpn/client | grep ovpn | cut -f 1 -d '.' | dmenu)
+
+[ -n "$client" ] && sudo openvpn /etc/openvpn/client/"$client".ovpn
