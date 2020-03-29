@@ -151,6 +151,7 @@ interval = 0
 [module/bat]
 type = custom/script
 exec = cat /sys/class/power_supply/BAT0/capacity
+# exec = bat_level
 interval = 5
 format-font = 2
 format-underline = ${colors.underline-2}
@@ -188,7 +189,7 @@ format-underline = ${colors.underline-4}
 [module/date]
 type = custom/script
 ; exec = date -u '+%Y %b %d (%a) %H:%M'
-exec = date -u '+%b %d (%a) %H:%M'
+exec = date '+%b %d (%a) %H:%M'
 interval = 25
 format-underline = ${colors.underline-7}
 
@@ -199,15 +200,15 @@ interval = 25
 
 [module/wttr]
 type = custom/script
-exec = weather
+exec = $SCRIPTS_HOME/weather
 format-font = 1
 format-underline = ${colors.underline-6}
 
 [module/charging]
 type = custom/script
-exec = charging | sed 's/charging/⚡/g'
+exec = charging
 format-font = 0
-interval = 1
+interval = 5
 
 [module/df]
 type = custom/script

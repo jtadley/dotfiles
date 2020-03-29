@@ -1,13 +1,23 @@
 #!/bin/sh
 
 res=""
+total_bat=0
 
-for x in /sys/class/power_supply/BAT?/status
+for bat in /sys/class/power_supply/BAT?
 do
-	if [ "$(cat $x)" == "Charging" ];
+	if [ "$(cat $bat/status)" == "Charging" ];
 	then
-		res="charging"
+		res="⚡"
+
+	else
+		total_bat=$(echo $total_bat + $(cat $bat/capacity) | bc)
 	fi;
 done
+
+if [ -z "$res" ] && [ "$total_bat" -lt 15 ];
+then
+	res="⚠"
+fi;
+
 
 echo "$res"
