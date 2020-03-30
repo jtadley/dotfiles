@@ -17,8 +17,11 @@ super + Escape
 F1
 	qutebrowser
 
-F3
+F2
 	emacs
+
+F3
+	help
 
 XF86AudioMute
 	vol toggle
@@ -34,6 +37,15 @@ XF86AudioMicMute
 
 XF86Launch1
 	mysuspend
+
+Print
+	scrot -e 'mv $f ~/Pictures/Screenshots'
+
+# Scroll_Lock
+# 	mysuspend
+
+# Pause
+# 	mysuspend
 
 #
 # bspwm hotkeys
