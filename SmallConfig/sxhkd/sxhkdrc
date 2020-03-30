@@ -2,11 +2,11 @@
 # wm independent hotkeys
 #
 
-# terminal emulator
+# unused: XF86MonBrightnessUp, XF86MonBrightnessDown, Pause, Scroll_Lock, M-print, XF86Battery, XF86Display
+
 super + shift + Return
 	$TERMINAL
 
-# program launcher
 super + p
 	dmenu_run
 
@@ -41,15 +41,11 @@ XF86Launch1
 Print
 	scrot -e 'mv $f ~/Pictures/Screenshots'
 
-# XF86MonBrightnessUp
- 
-# XF86MonBrightnessDown
-
-Scroll_Lock
+XF86TouchpadToggle
 	toggle_touchpad
 
-# Pause
-# 	mysuspend
+XF86ScreenSaver
+	lock
 
 #
 # bspwm hotkeys
