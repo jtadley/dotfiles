@@ -41,8 +41,12 @@ XF86Launch1
 Print
 	scrot -e 'mv $f ~/Pictures/Screenshots'
 
-# Scroll_Lock
-# 	mysuspend
+# XF86MonBrightnessUp
+ 
+# XF86MonBrightnessDown
+
+Scroll_Lock
+	toggle_touchpad
 
 # Pause
 # 	mysuspend

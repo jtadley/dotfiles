@@ -1,0 +1,12 @@
+#!/bin/sh
+
+device="SynPS/2 Synaptics TouchPad"
+
+enabled=$(xinput list-props "$device" | grep 'Device Enabled')
+
+if [ "${enabled: -1}" -eq 1 ];
+then
+	xinput disable "$device"
+else
+	xinput enable "$device"
+fi;
