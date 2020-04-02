@@ -3,6 +3,8 @@
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
 
+font0 = 'SourceCodePro-Regular'
+
 bg_color = '#222'
 bg_color_alt = '#1a1a1a'
 fg_color = '#dfdfdf'
@@ -298,7 +300,7 @@ c.colors.statusbar.command.fg = fg_color
 
 ## Background color of the statusbar in private browsing + command mode.
 ## Type: QssColor
-c.colors.statusbar.command.private.bg = bg_color
+c.colors.statusbar.command.private.bg = 'black'
 
 ## Foreground color of the statusbar in private browsing + command mode.
 ## Type: QssColor
@@ -330,7 +332,7 @@ c.colors.statusbar.passthrough.fg = fg_color
 
 ## Background color of the statusbar in private browsing mode.
 ## Type: QssColor
-c.colors.statusbar.private.bg = bg_color
+c.colors.statusbar.private.bg = 'black'
 
 ## Foreground color of the statusbar in private browsing mode.
 ## Type: QssColor
@@ -879,7 +881,7 @@ c.content.host_blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/
 ## Directory to save downloads to. If unset, a sensible OS-specific
 ## default is used.
 ## Type: Directory
-# c.downloads.location.directory = None
+c.downloads.location.directory = '~/Downloads'
 
 ## Prompt the user for the download location. If set to false,
 ## `downloads.location.directory` will be used.
@@ -1454,7 +1456,7 @@ c.hints.uppercase = False
 ##   - startpage: Load the start page.
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
-# c.tabs.last_close = 'ignore'
+c.tabs.last_close = 'close'
 
 ## Maximum width (in pixels) of tabs (-1 for no maximum). This setting
 ## only applies when tabs are horizontal. This setting does not apply to
@@ -1613,7 +1615,7 @@ c.hints.uppercase = False
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-# c.url.default_page = 'https://start.duckduckgo.com/'
+# c.url.default_page = 'blank'
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
@@ -1644,11 +1646,13 @@ c.url.searchengines = {
         'DEFAULT'   : 'https://duckduckgo.com/?q={}',
         'aw'        : 'https://wiki.archlinux.org/?search={}',
         'w'         : 'https://en.wikipedia.org/?search={}',
-        'dic'       : 'https://www.merriam-webster.com/dictionary/{}'
+        'dic'       : 'https://www.merriam-webster.com/dictionary/{}',
+        'yt'        : 'https://www.youtube.com/results?search_query={}'
         }
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
+c.url.start_pages = ['~/.config/qutebrowser/home_page.html']
 # c.url.start_pages = ['https://start.duckduckgo.com']
 
 ## URL parameters to strip with `:yank url`.
