@@ -6,30 +6,52 @@ body {
 	color: #dfdfdf;
 	background-color: #222;
 }
+.column {
+	  float: left;
+		padding: 10px;
+}
+.left {
+	  width: 50%;
+}
+.right {
+	  width: 50%;
+}
 </style>
 </head>
-<div>
-	<table style="width:50%">
-		<tr>
-			<th>Quickmark</th>
-			<th>Page</th>
-		</tr>
-		<tr>
-			<td>aw</td>
-			<td>Arch Linux</td>
-		</tr>
-		<tr>
-			<td>w</td>
-			<td>Wikipedia</td>
-		</tr>
-		<tr>
-			<td>dic</td>
-			<td>Merriam Webster</td>
-		</tr>
-		<tr>
-			<td>yt</td>
-			<td>YouTube</td>
-		</tr>
-	</table>
+
+<div class="row">
+	<div class="column">
+		<table style="width:100%">
+			<tr>
+				<th>quickmark</th>
+				<th>page</th>
+			</tr>
+			<tr>
+				<td>aw</td>
+				<td>arch linux</td>
+			</tr>
+			<tr>
+				<td>w</td>
+				<td>wikipedia</td>
+			</tr>
+			<tr>
+				<td>dic</td>
+				<td>Merriam Webster</td>
+			</tr>
+			<tr>
+				<td>yt</td>
+				<td>YouTube</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="column">
+		<div>
+			<iframe src="https://www.merriam-webster.com/word-of-the-day"" height="650">
+				Alternative text for browsers that do not understand IFrames.
+			</iframe>
+		</div>
+	</div>
+
 </div>
 </html>
