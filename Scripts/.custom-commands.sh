@@ -1,13 +1,5 @@
 #!/bin/sh
 
-weather () {
-	curl "wttr.in/?m"
-}
-
-myst () {
-	/usr/bin/st
-}
-
 # Creates a new directory and changed current directory to inside
 mkcd () {
 	mkdir -p -- "$1" &&
@@ -23,24 +15,10 @@ mvcd () {
 	mv "$1" "$2"  && cd "$2"
 }
 
-# Opens a new terminal in current working directory
-nt () {
-	pwd | st &
-	#setsid pwd | st >/dev/null 2>&1 &
-}
-
 # Loads coq and runs vim
 coqvim () {
 	eval `opam config env` &&
 		vim "$1"
-}
-
-entrlatex () {
-	echo "$1" | entr -p pdflatex "$1"
-}
-
-entrpandoc () {
-	echo "$1" | entr -p pandoc "$1" -t beamer -o out.pdf
 }
 
 hdmion () {
@@ -77,14 +55,6 @@ hdmioff () {
 
 xrandroff () {
 	xrandr --output "$1" --off
-}
-
-vpn () {
-	~/Scripts/vpn
-}
-
-compilersbook () {
-	zathura ~/Documents/Books/Essentials-of-Compilation/build/book.pdf
 }
 
 keybindings () {
