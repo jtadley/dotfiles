@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -z "$1" ];
+then
+	cp $HOME/Git/dotfiles/hw-template.tex .
+else
+	cp $HOME/Git/dotfiles/hw-template.tex "$1"
+fi
