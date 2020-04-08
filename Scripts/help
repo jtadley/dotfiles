@@ -1,6 +1,6 @@
 #!/bin/sh
 # /usr/local/bin
 
-file=$(find ~/.config/help -type f | sed 's/.*\/help\///' | dmenu -fn "Source Code Pro:size=10" -nb "#222222" -nf "#bbbbbb" -sb "#16A085" -sf "#eeeeee")
+file=$(find ~/.config/help -type f | sed 's/.*\/help\///' | dmenu)
 
-[ -n "$file" ] && cat ~/.config/help/"$file" | dmenu -fn "Source Code Pro:size=10" -nb "#222222" -nf "#bbbbbb" -sb "#16A085" -sf "#eeeeee" -l 20
+[ -n "$file" ] && cat ~/.config/help/"$file" | dmenu -l 20
