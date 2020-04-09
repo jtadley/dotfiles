@@ -1686,6 +1686,7 @@ c.url.start_pages = ['~/.config/qutebrowser/home_page.html']
 # c.zoom.text_only = False
 
 ## Bindings for normal mode
+config.bind(",m", 'spawn mpv {url}')
 # config.bind("'", 'enter-mode jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')
