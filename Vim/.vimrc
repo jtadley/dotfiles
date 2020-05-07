@@ -4,6 +4,7 @@ filetype plugin on
 execute pathogen#infect()
 
 let mapleader=","
+let maplocalleader=","
 set clipboard=unnamedplus
 
 " ---------------------------------------------------------------------
@@ -132,7 +133,7 @@ autocmd FileType markdown nnoremap <F6> :! pandoc %:p -t beamer -o %:t:r.pdf<CR>
 autocmd FileType markdown nnoremap <F7> :! pandoc %:p -f markdown_github --pdf-engine=xelatex -o %:t:r.pdf<CR>
 autocmd FileType haskell nnoremap <F5> :! ghc -o %:t:r %:p && ./%:t:r && rm *.hi && rm *.o<CR>
 autocmd FileType java nnoremap <F5> :! javac %:p && java %:t:r<CR>
-autocmd FileType python nnoremap <F5> :! python3.7 %:p<CR>
+autocmd FileType python nnoremap <F5> :! python3.8 %:p<CR>
 
 "autocmd VimLeave *.tex !texclear %
 
@@ -207,4 +208,52 @@ autocmd FileType tex nnoremap <Space><Space> /(<>)<CR>:noh<CR>4xi
 
 " ---------------------------------------------------------------------
 "  Highlighted Yank
-let g:highlightedyank_highlight_duration = 500
+let g:highlightedyank_highlight_duration = 400
+
+" ---------------------------------------------------------------------
+"  RedTT
+" let g:redtt_path = 'dune exec -- redtt'
+let g:redtt_path = '/home/draag/_build/default/Applications/redtt/src/bin/main.exe'
+set rtp^="/home/draag/.opam/4.09.0/share/ocp-indent/vim"
+
+" ---------------------------------------------------------------------
+" ---------------------------------------------------------------------
+" ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
+let s:opam_share_dir = system("opam config var share")
+let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
+
+let s:opam_configuration = {}
+
+function! OpamConfOcpIndent()
+  execute "set rtp^=" . s:opam_share_dir . "/ocp-indent/vim"
+endfunction
+let s:opam_configuration['ocp-indent'] = function('OpamConfOcpIndent')
+
+function! OpamConfOcpIndex()
+  execute "set rtp+=" . s:opam_share_dir . "/ocp-index/vim"
+endfunction
+let s:opam_configuration['ocp-index'] = function('OpamConfOcpIndex')
+
+function! OpamConfMerlin()
+  let l:dir = s:opam_share_dir . "/merlin/vim"
+  execute "set rtp+=" . l:dir
+endfunction
+let s:opam_configuration['merlin'] = function('OpamConfMerlin')
+
+let s:opam_packages = ["ocp-indent", "ocp-index", "merlin"]
+let s:opam_check_cmdline = ["opam list --installed --short --safe --color=never"] + s:opam_packages
+let s:opam_available_tools = split(system(join(s:opam_check_cmdline)))
+for tool in s:opam_packages
+  " Respect package order (merlin should be after ocp-index)
+  if count(s:opam_available_tools, tool) > 0
+    call s:opam_configuration[tool]()
+  endif
+endfor
+" ## end of OPAM user-setup addition for vim / base ## keep this line
+" ## added by OPAM user-setup for vim / ocp-indent ## 76f3ac17f5b6cdf2c7ac1f4a25c3a37a ## you can edit, but keep this line
+if count(s:opam_available_tools,"ocp-indent") == 0
+  source "/home/draag/.opam/4.09.0/share/ocp-indent/vim/indent/ocaml.vim"
+endif
+" ## end of OPAM user-setup addition for vim / ocp-indent ## keep this line
+" ---------------------------------------------------------------------
+" ---------------------------------------------------------------------
