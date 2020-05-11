@@ -3,12 +3,18 @@
 
 primary=$(xrandr | grep primary | cut -d' ' -f1)
 
-secondary=$(xrandr | grep ' connected' | tail -n 1 | cut -d' ' -f1)
-secondary_connected=$(xrandr | grep $secondary | grep mm)
+secondary=$(xrandr | grep -v primary | grep ' connected' | head -n 1 | cut -d' ' -f1)
 
-if [ -z "$secondary_connected" ]
+if [ -z "$secondary" ]
 then
-	xrandr --output $secondary --auto --right-of $primary
+	echo "No secondary monitor connected."
 else
-	xrandr --output $secondary --off
+	secondary_connected=$(xrandr | grep $secondary | grep mm)
+
+	if [ -z "$secondary_connected" ]
+	then
+		xrandr --output $secondary --auto --right-of $primary
+	else
+		xrandr --output $secondary --off
+	fi
 fi
