@@ -47,6 +47,9 @@ XF86TouchpadToggle
 XF86ScreenSaver
 	lock
 
+XF86Display
+	external_display
+
 #
 # bspwm hotkeys
 #

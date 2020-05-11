@@ -1,0 +1,14 @@
+#!/bin/sh
+
+
+primary=$(xrandr | grep primary | cut -d' ' -f1)
+
+secondary=$(xrandr | grep ' connected' | tail -n 1 | cut -d' ' -f1)
+secondary_connected=$(xrandr | grep $secondary | grep mm)
+
+if [ -z "$secondary_connected" ]
+then
+	xrandr --output $secondary --auto --right-of $primary
+else
+	xrandr --output $secondary --off
+fi
