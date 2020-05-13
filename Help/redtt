@@ -1,0 +1,12 @@
+<LocalLeader>l  : Load
+<LocalLeader>L  : Load (ignore cache)
+<LocalLeader>p  : Check to current position
+<LocalLeader>P  : Check to current position (ignore cache)
+C-k II          : 𝕀  
+C-k !-          : ⊢  
+C-k <:          : ⦉  
+C-k :>          : ⦊
+C-k <<          : «
+C-k >>          : »
+C-k *l          : λ
+C-k ->          : →
