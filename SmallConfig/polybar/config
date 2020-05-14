@@ -84,7 +84,7 @@ font-1 = Wuncon Siji:pixelsize=9;1
 font-2 = Symbola:pixelsize=9;1
 
 modules-left = bspwm
-modules-center = tabs
+modules-center = tabs-external
 modules-right = date-external
 
 tray-position = right
@@ -125,7 +125,7 @@ font-1 = Wuncon Siji:pixelsize=9;1
 font-2 = Symbola:pixelsize=9;1
 
 modules-left = bspwm
-modules-center = tabs
+modules-center = tabs-external
 modules-right = date-external
 
 tray-position = right
@@ -146,6 +146,13 @@ foreground = #dfdfdf
 foreground-alt = #555
 type = custom/script
 exec = $SCRIPTS_HOME/tabs "#dfdfdf" "#7d7d7d" "50"
+interval = 0
+
+[module/tabs-external]
+foreground = #dfdfdf
+foreground-alt = #555
+type = custom/script
+exec = $SCRIPTS_HOME/tabs "#dfdfdf" "#7d7d7d" "75"
 interval = 0
 
 [module/bat]
