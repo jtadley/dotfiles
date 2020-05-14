@@ -145,7 +145,7 @@ cursor-scroll = ns-resize
 foreground = #dfdfdf
 foreground-alt = #555
 type = custom/script
-exec = $SCRIPTS_HOME/tabs "#dfdfdf" "#7d7d7d"
+exec = $SCRIPTS_HOME/tabs "#dfdfdf" "#7d7d7d" "50"
 interval = 0
 
 [module/bat]
