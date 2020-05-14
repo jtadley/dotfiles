@@ -12,7 +12,13 @@ MAX_LENGTH=100
 if [ ! -z "$3" ]; then
 	MAX_LENGTH="$3"
 fi
-TRIM_LENGTH=$(echo "scale=0; $MAX_LENGTH / ${#WLIST[@]} - 3" | bc)
+
+if [ ! -z "$WLIST" ];
+then
+	TRIM_LENGTH=$(echo "scale=0; $MAX_LENGTH / ${#WLIST[@]} - 3" | bc)
+else
+	TRIM_LENGTH="$MAX_LENGTH"
+fi
 
 for ID in ${WLIST[@]}; do
 	TITLE=$(xtitle $ID | sed -E "s/(.{$TRIM_LENGTH})(.{1,})$/\1.../")
