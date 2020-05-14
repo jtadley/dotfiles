@@ -6,9 +6,7 @@
 
 
 source $HOME/.profile &
-source $HOME/.custom-commands.sh &
 
-xmodmap $HOME/.Xmodmap &
 $SCRIPTS_HOME/setbg &
 $SCRIPTS_HOME/external_monitor & $SCRIPTS_HOME/external_monitor &
 amixer sset Master 50% &

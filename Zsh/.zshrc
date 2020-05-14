@@ -29,8 +29,8 @@ function vi_mode_prompt_info() {
 RPS1='$(vi_mode_prompt_info)'
 RPS2=$RPS1
 
-source ~/.custom-commands.sh
 source ~/.profile
-alias mkdir="/usr/bin/mkdir -pv"
-xmodmap $HOME/.Xmodmap
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+
+# opam configuration
+test -r /home/draag/.opam/opam-init/init.zsh && . /home/draag/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
