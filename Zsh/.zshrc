@@ -5,7 +5,8 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="lambda"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
+# https://github.com/zsh-users/zsh-syntax-highlighting.git
 
 source $ZSH/oh-my-zsh.sh
 
