@@ -9,25 +9,36 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR='vim'
-
-set -o vi
+# vi mode
+bindkey -v
 
 export KEYTIMEOUT=1
 
 function zle-keymap-select() {
+	case $KEYMAP in
+		vicmd) echo -ne '\e[1 q';; # block cursor
+		viins|main) echo -ne '\e[5 q';; # less visible cursor
+	esac
+
 	zle reset-prompt
 	zle -R
 }
 
-zle -N zle-keymap-select
-
-function vi_mode_prompt_info() {
-	echo "${${KEYMAP/vicmd/[% NORMAL]%}/(main|viins)/[% INSERT]%}"
+function zle-line-init {
+	case $KEYMAP in
+		vicmd) echo -ne '\e[1 q';; # block cursor
+		viins|main) echo -ne '\e[5 q';; # less visible cursor
+	esac
 }
 
-RPS1='$(vi_mode_prompt_info)'
-RPS2=$RPS1
+function zle-line-finish {
+	echo -ne '\e[1 q'
+}
+
+zle -N zle-keymap-select
+zle -N zle-line-init
+zle -N zle-line-finish
+
 
 source ~/.profile
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
