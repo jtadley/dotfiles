@@ -1,12 +1,12 @@
-# plugins: zsh-syntax-highlighting, zsh-autosuggestions
-
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="lambda"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions vi-mode cabal)
 # https://github.com/zsh-users/zsh-syntax-highlighting.git
+# https://github.com/zsh-users/zsh-autosuggestions
+# sudo
 
 source $ZSH/oh-my-zsh.sh
 
