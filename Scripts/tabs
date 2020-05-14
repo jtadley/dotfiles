@@ -2,13 +2,20 @@
 
 # First argument = focused color
 # Second argument = unfocused color
+# Third argument (optional) = max length of tabs string
 
 TABS=''
 WLIST=($(bspc query -N -n .window -d focused))
 FWIN=$(bspc query -N -n .window.focused)
+MAX_LENGTH=100
+
+if [ ! -z "$3" ]; then
+	MAX_LENGTH="$3"
+fi
+TRIM_LENGTH=$(echo "scale=0; $MAX_LENGTH / ${#WLIST[@]} - 3" | bc)
 
 for ID in ${WLIST[@]}; do
-	TITLE=$(xtitle $ID | sed -E 's/(.{30})(.{1,})$/\1.../')
+	TITLE=$(xtitle $ID | sed -E "s/(.{$TRIM_LENGTH})(.{1,})$/\1.../")
 	if [ "$ID" == "$FWIN" ]; then
 		TABS="$TABS%{A1:bspc node -f $ID:}%{F$1}$TITLE%{F- O18 A}"
 		continue;
