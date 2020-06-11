@@ -1642,8 +1642,10 @@ c.url.default_page = '~/.config/qutebrowser/home_page.html'
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
+## Searx instances: https://searx.space/
 c.url.searchengines = { 
-        'DEFAULT'   : 'https://duckduckgo.com/?q={}',
+        'DEFAULT'   : 'https://search.snopyta.org/?q={}',
+        'ddg'       : 'https://duckduckgo.com/?q={}',
         'aw'        : 'https://wiki.archlinux.org/?search={}',
         'w'         : 'https://en.wikipedia.org/?search={}',
         'dic'       : 'https://www.merriam-webster.com/dictionary/{}',
@@ -1686,7 +1688,8 @@ c.url.start_pages = ['~/.config/qutebrowser/home_page.html']
 # c.zoom.text_only = False
 
 ## Bindings for normal mode
-config.bind(",m", 'spawn mpv {url}')
+config.bind(",mm", 'spawn mpv {url}')
+config.bind(",mn", 'spawn mpv {url} --vid=no')
 # config.bind("'", 'enter-mode jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')
