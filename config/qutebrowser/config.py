@@ -1649,7 +1649,8 @@ c.url.searchengines = {
         'aw'        : 'https://wiki.archlinux.org/?search={}',
         'w'         : 'https://en.wikipedia.org/?search={}',
         'dic'       : 'https://www.merriam-webster.com/dictionary/{}',
-        'yt'        : 'https://www.youtube.com/results?search_query={}'
+        'yt'        : 'https://www.youtube.com/results?search_query={}',
+        'a'         : 'https://www.amazon.com/s?k={}'
         }
 
 ## Page(s) to open at the start.
