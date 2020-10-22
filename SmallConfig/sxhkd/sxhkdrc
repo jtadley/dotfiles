@@ -23,6 +23,9 @@ F2
 F3
 	help
 
+F4
+	radar
+
 XF86AudioMute
 	vol toggle
 

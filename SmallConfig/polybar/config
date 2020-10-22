@@ -181,7 +181,7 @@ format-prefix = "cpu: "
 
 [module/temp]
 type = custom/script
-exec = /usr/lib/i3blocks/temp
+exec = temp
 interval = 25
 format-underline = ${colors.underline-4}
 format-prefix = "temp: "
@@ -241,9 +241,9 @@ label-urgent = %name%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = %name%
+label-empty =
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 0
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -301,6 +301,12 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/traffic]
+type = custom/script
+exec = $SCRIPTS_HOME/traffic
+interval = 5
+format-underline = ${colors.underline-5}
 
 [module/eth]
 type = internal/network
