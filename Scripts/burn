@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# ------------------------------------
+
+if [ ! -e *.mp3 ]
+then
+	if [ -z "$1" ]
+	then
+		echo "Specify file type."
+		exit 0
+	fi
+
+	for file in *."$1"
+	do
+		name=$(echo "$file" | cut -f 1 -d '.')
+		ffmpeg -i "$file" "$name".mp3
+	done
+fi
+
+# ------------------------------------
+
+isoName="CD.iso"
+
+if [ -e "$isoName" ]
+then
+	rm "$isoName"
+fi
+
+# ------------------------------------
+
+mkisofs -o "$isoName" *.mp3 && cdrecord -v "$isoName" && rm "$isoName" && rm *.mp3
+
+exit 1
