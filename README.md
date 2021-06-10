@@ -1,5 +1,7 @@
 # dotfiles
 
+MY MAIN CONFIGURATION LIVES IN [SmallConfig](https://github.com/jtadley/dotfiles/tree/master/SmallConfig)
+
 My program configurations.
 
 List of Programs:
