@@ -81,6 +81,10 @@ super + space
 super + shift + x
 	power_prompt
 
+# bookmarks
+super + b
+	bookmarks
+
 #
 # state/flags
 #
